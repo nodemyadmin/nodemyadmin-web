@@ -43,21 +43,21 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                jshintrc: 'client/config/.jshintrc',
+                jshintrc: 'client/config/lints/.jshintrc',
                 ignores: '<%= serve.jshint.ignore %>'
             },
             all: '<%= serve.jshint.files %>'
         },
         jscs: {
             options: {
-                config: 'client/config/.jscsrc'
+                config: 'client/config/lints/.jscsrc'
             },
             src: '<%= serve.jscs.files %>',
         },
         csslint: {
             strict: {
                 options: {
-                    csslintrc: 'client/config/.csslintrc',
+                    csslintrc: 'client/config/lints/.csslintrc',
                     ignores: '<%= serve.csslint.ignore %>'
                 },
                 src: '<%= serve.csslint.files %>'
@@ -66,14 +66,14 @@ module.exports = function(grunt) {
         htmlhint: {
             Root_HTML_Files: {
                 options: {
-                    htmlhintrc: 'client/config/.htmlhint-n-rc',
+                    htmlhintrc: 'client/config/lints/.htmlhint-n-rc',
                     ignores: '<%= serve.htmlhint.Root_HTML_Files.ignore %>'
                 },
                 src: '<%= serve.htmlhint.Root_HTML_Files.files %>'
             },
             Templates: {
                 options: {
-                    htmlhintrc: 'client/config/.htmlhint-t-rc',
+                    htmlhintrc: 'client/config/lints/.htmlhint-t-rc',
                     ignores: '<%= serve.htmlhint.Templates.ignore %>'
                 },
                 src: '<%= serve.htmlhint.Templates.files %>'
