@@ -1,0 +1,47 @@
+{
+    "name": "nodemyadmin",
+    "version": "0.0.0",
+    "author": "Ashwin Hegde",
+    "description": "",
+    "contributors": [{
+        "name": "Ashwin Hegde",
+        "email": "ashwin.hegde3@gmail.com"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/hegdeashwin/nodemyadmin"
+    },
+    "issues": {
+        "url": "http://github.com/hegdeashwin/nodemyadmin/issues?state=open"
+    },
+    "milestones": {
+        "url": "http://github.com/hegdeashwin/nodemyadmin/issues/milestones"
+    },
+    "releases": {
+        "url": "http://github.com/hegdeashwin/nodemyadmin/releases"
+    },
+    "wiki": {
+        "url": "http://github.com/hegdeashwin/nodemyadmin/wiki"
+    },
+    "dependencies": {
+        "compression": "^1.0.3",
+        "errorhandler": "^1.1.1",
+        "loopback": "^2.8.0",
+        "loopback-boot": "^2.6.5",
+        "loopback-datasource-juggler": "^2.7.0",
+        "serve-favicon": "^2.0.1"
+    },
+    "optionalDependencies": {
+        "loopback-explorer": "^1.1.0"
+    },
+    "keywords": [
+        
+    ],
+    "engines": {
+        "node": ">=0.10"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://raw.github.com/hegdeashwin/Protocore/master/LICENSE"
+    }]
+}
