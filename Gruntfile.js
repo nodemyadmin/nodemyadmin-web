@@ -10,32 +10,38 @@ module.exports = function(grunt) {
      * Setup configuration
      */
     grunt.initConfig({
-        configuredFiles: grunt.file.readJSON('config/servefiles.json'),
+        configuredFiles: grunt.file.readJSON('client/config/servefiles.json'),
         clean: {
-            build: ['prod']
+            build: ['client/prod']
         },
         shell: {
             uglify: {
-                command: 'node tools/r.js -o config/build.js'
+                command: [
+                    'node client/config/r.js -o client/config/build/optimize-build.js',
+                    'node client/config/r.js -o client/config/build/copy-build.js',
+                    'rm client/main-optimize.js',
+                    'rm client/prod/main.js',
+                    'mv client/prod/main-optimize.js client/prod/main.js'
+                ].join('&&')
             }
         },
         jshint: {
             options: {
-                jshintrc: 'config/.jshintrc',
+                jshintrc: 'client/config/.jshintrc',
                 ignores: '<%= configuredFiles.jshint.ignore %>'
             },
             all: '<%= configuredFiles.jshint.files %>'
         },
         jscs: {
             options: {
-                config: 'config/.jscsrc'
+                config: 'client/config/.jscsrc'
             },
             src: '<%= configuredFiles.jscs.files %>',
         },
         csslint: {
             strict: {
                 options: {
-                    csslintrc: 'config/.csslintrc',
+                    csslintrc: 'client/config/.csslintrc',
                     ignores: '<%= configuredFiles.csslint.ignore %>'
                 },
                 src: '<%= configuredFiles.csslint.files %>'
@@ -44,14 +50,14 @@ module.exports = function(grunt) {
         htmlhint: {
             Root_HTML_Files: {
                 options: {
-                    htmlhintrc: 'config/.htmlhint-n-rc',
+                    htmlhintrc: 'client/config/.htmlhint-n-rc',
                     ignores: '<%= configuredFiles.htmlhint.Root_HTML_Files.ignore %>'
                 },
                 src: '<%= configuredFiles.htmlhint.Root_HTML_Files.files %>'
             },
             Templates: {
                 options: {
-                    htmlhintrc: 'config/.htmlhint-t-rc',
+                    htmlhintrc: 'client/config/.htmlhint-t-rc',
                     ignores: '<%= configuredFiles.htmlhint.Templates.ignore %>'
                 },
                 src: '<%= configuredFiles.htmlhint.Templates.files %>'
@@ -89,7 +95,7 @@ module.exports = function(grunt) {
         },
         strip: {
             main: {
-                src: 'prod/client/apps/**/*.js',
+                src: 'client/prod/apps/**/*.js',
                 options: {
                     inline: true,
                     nodes: ['console.log', 'debug']
@@ -132,18 +138,20 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-htmlhint');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-jsonlint');
+    grunt.loadNpmTasks('grunt-banner');
 
     /**
      * Define tasks : Tasks for development eco - system.
      */
     grunt.registerTask('default', [
         'htmlhint',
-        'csslint',
-        'jshint',
+        'jsonlint',
         'jscs',
-        'less:readyMade',
-        'less:customMade',
-        'autofix'
+        'jshint',
+        'compileLessDev',
+        'autofix',
+        'csslint'
     ]);
     grunt.registerTask('dev', ['default']); // Alias for `default`.
 
@@ -152,20 +160,33 @@ module.exports = function(grunt) {
      */
     grunt.registerTask('build', [
         'htmlhint',
-        'csslint',
+        'jsonlint',
+        'jscs',
         'jshint',
-        'compileless',
+        'compileLessProd',
         'autofix',
+        'csslint',
         'clean',
-        'shell',
         'strip',
-        'htmlmin'
+        'shell',
+        'htmlmin',
+        'usebanner'
     ]);
 
     /**
      * Define sub-tasks : Tasks for Less compilation.
      */
     grunt.registerTask('compileless', ['less:readyMade', 'less:customMade']);
+
+    /**
+     * Define sub-tasks : Tasks for Less compilation for development.
+     */
+    grunt.registerTask('compileLessDev', ['less:readyMade', 'less:customMade']);
+
+    /**
+     * Define sub-tasks : Tasks for Less compilation for production.
+     */
+    grunt.registerTask('compileLessProd', ['less:readyMade', 'less:prod']);
 
     /**
      * Define sub-tasks : Alias for `autofix`
