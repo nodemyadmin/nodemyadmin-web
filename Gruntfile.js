@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         serve: grunt.file.readJSON('client/config/servefiles.json'),
         program: grunt.file.readJSON('package.json'),
-        buildTags: "/* Project Name : <%= " + program.name + "%> , Release version : <%= " + program.version + "%> */",
+        buildTags: "/* Project Name : <%= program.name %> , Release version : <%= program.version %> */",
         clean: {
             build: ['client/prod']
         },
@@ -23,6 +23,11 @@ module.exports = function(grunt) {
                     banner: '<%= buildTags %>',
                     linebreak: true
                 }
+            }
+        },
+        jsonlint: {
+            files: {
+                src: '<%= serve.jsonlint %>'
             }
         },
         shell: {
