@@ -10,9 +10,20 @@ module.exports = function(grunt) {
      * Setup configuration
      */
     grunt.initConfig({
-        configuredFiles: grunt.file.readJSON('client/config/servefiles.json'),
+        serve: grunt.file.readJSON('client/config/servefiles.json'),
+        program: grunt.file.readJSON('package.json'),
+        buildTags: "/* Project Name : <%= " + program.name + "%> , Release version : <%= " + program.version + "%> */",
         clean: {
             build: ['client/prod']
+        },
+        usebanner: {
+            buildTags: {
+                options: {
+                    position: 'top',
+                    banner: '<%= buildTags %>',
+                    linebreak: true
+                }
+            }
         },
         shell: {
             uglify: {
@@ -28,39 +39,39 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 jshintrc: 'client/config/.jshintrc',
-                ignores: '<%= configuredFiles.jshint.ignore %>'
+                ignores: '<%= serve.jshint.ignore %>'
             },
-            all: '<%= configuredFiles.jshint.files %>'
+            all: '<%= serve.jshint.files %>'
         },
         jscs: {
             options: {
                 config: 'client/config/.jscsrc'
             },
-            src: '<%= configuredFiles.jscs.files %>',
+            src: '<%= serve.jscs.files %>',
         },
         csslint: {
             strict: {
                 options: {
                     csslintrc: 'client/config/.csslintrc',
-                    ignores: '<%= configuredFiles.csslint.ignore %>'
+                    ignores: '<%= serve.csslint.ignore %>'
                 },
-                src: '<%= configuredFiles.csslint.files %>'
+                src: '<%= serve.csslint.files %>'
             }
         },
         htmlhint: {
             Root_HTML_Files: {
                 options: {
                     htmlhintrc: 'client/config/.htmlhint-n-rc',
-                    ignores: '<%= configuredFiles.htmlhint.Root_HTML_Files.ignore %>'
+                    ignores: '<%= serve.htmlhint.Root_HTML_Files.ignore %>'
                 },
-                src: '<%= configuredFiles.htmlhint.Root_HTML_Files.files %>'
+                src: '<%= serve.htmlhint.Root_HTML_Files.files %>'
             },
             Templates: {
                 options: {
                     htmlhintrc: 'client/config/.htmlhint-t-rc',
-                    ignores: '<%= configuredFiles.htmlhint.Templates.ignore %>'
+                    ignores: '<%= serve.htmlhint.Templates.ignore %>'
                 },
-                src: '<%= configuredFiles.htmlhint.Templates.files %>'
+                src: '<%= serve.htmlhint.Templates.files %>'
 
             }
         },
@@ -69,19 +80,19 @@ module.exports = function(grunt) {
                 options: {
                     compress: true
                 },
-                files: '<%= configuredFiles.less.readyMade.files %>'
+                files: '<%= serve.less.readyMade.files %>'
             },
             customMade: {
                 options: {
                     compress: false
                 },
-                files: '<%= configuredFiles.less.customMade.files %>'
+                files: '<%= serve.less.customMade.files %>'
             },
             prod: {
                 options: {
                     compress: true
                 },
-                files: '<%= configuredFiles.less.customMade.files %>'
+                files: '<%= serve.less.customMade.files %>'
             }
         },
         watch: {
@@ -89,7 +100,7 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false
                 },
-                files: '<%= configuredFiles.watch.less.files %>',
+                files: '<%= serve.watch.less.files %>',
                 tasks: ['less:customMade']
             }
         },
@@ -119,7 +130,7 @@ module.exports = function(grunt) {
                     removeComments: true,
                     collapseWhitespace: true
                 },
-                files: '<%= configuredFiles.htmlmin.files %>'
+                files: '<%= serve.htmlmin.files %>'
             }
         }
     });
