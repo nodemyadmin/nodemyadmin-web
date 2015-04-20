@@ -20,11 +20,11 @@ indent_style = tab
 indent_size = 4
 
 # Indentation override for all JS under lib directory
-[{client/systems/libs/**/*.js,client/systems/utilities/**/*.js}]
+[{client/systems/bower_components/**/*.js,client/systems/utilities/**/*.js}]
 indent_style = tab
 indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
-[{package.json,.travis.yml,Gruntfile.js,server.js,config/.csslintrc,config/.htmlhint-n-rc,config/.htmlhint-t-rc,config/.jscsrc,config/.jshintrc,config/build.js,config/servefiles.json}]
+[{package.json,Gruntfile.js,server/server.js,client/config/.csslintrc,client/config/.htmlhint-n-rc,client/config/.htmlhint-t-rc,client/config/.jscsrc,client/config/.jshintrc,client/config/build.js,client/config/servefiles.json}]
 indent_style = tab
 indent_size = 4
