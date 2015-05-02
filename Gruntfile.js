@@ -33,8 +33,8 @@ module.exports = function(grunt) {
         shell: {
             uglify: {
                 command: [
-                    'node client/config/r.js -o client/config/build/optimize-build.js',
-                    'node client/config/r.js -o client/config/build/copy-build.js',
+                    'node client/bower_components/rjs/dist/r.js -o client/config/build/optimize-build.js',
+                    'node client/bower_components/rjs/dist/r.js -o client/config/build/copy-build.js',
                     'rm client/main-optimize.js',
                     'rm client/prod/main.js',
                     'mv client/prod/main-optimize.js client/prod/main.js'
