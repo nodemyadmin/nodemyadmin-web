@@ -20,6 +20,7 @@ requirejs.config({
         'backbone': '../bower_components/backbone/backbone',
         'marionette': '../bower_components/marionette/lib/backbone.marionette.min',
         'handlebars': '../bower_components/handlebars/handlebars.min',
+        'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min'
 
         /* Backbone/Merionette plugins */
         'backbone.babysitter': '../bower_components/backbone.babysitter/lib/backbone.babysitter.min',
@@ -64,6 +65,10 @@ requirejs.config({
         },
         'handlebars': {
             exports: 'Handlebars'
+        },
+        'bootstrap': {
+            deps: ['jquery'],
+            exports: 'bootstrap'
         }
     }
 });
