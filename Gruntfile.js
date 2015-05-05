@@ -81,12 +81,6 @@ module.exports = function(grunt) {
             }
         },
         less: {
-            readyMade: {
-                options: {
-                    compress: true
-                },
-                files: '<%= serve.less.readyMade.files %>'
-            },
             customMade: {
                 options: {
                     compress: false
@@ -192,12 +186,12 @@ module.exports = function(grunt) {
     /**
      * Define sub-tasks : Tasks for Less compilation.
      */
-    grunt.registerTask('compileless', ['less:readyMade', 'less:customMade']);
+    grunt.registerTask('compileless', ['less:customMade']);
 
     /**
      * Define sub-tasks : Tasks for Less compilation for development.
      */
-    grunt.registerTask('compileLessDev', ['less:readyMade', 'less:customMade']);
+    grunt.registerTask('compileLessDev', ['less:customMade']);
 
     /**
      * Define sub-tasks : Tasks for Less compilation for production.

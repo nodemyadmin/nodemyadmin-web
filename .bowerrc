@@ -1,3 +1,4 @@
 {
- 	"directory": "client/bower_components"
+ 	"directory": "client/bower_components",
+ 	"https-proxy":"http://172.27.171.92:8080"
 }
