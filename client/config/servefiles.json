@@ -48,12 +48,6 @@
 		}
 	},
 	"less": {
-		"readyMade": {
-			"files": {
-				"client/systems/frameworks/bootstrap/css/bootstrap.min.css": "client/systems/frameworks/bootstrap/less/bootstrap.less",
-				"client/systems/frameworks/bootstrap/css/bootstrap-theme.min.css": "client/systems/frameworks/bootstrap/less/theme.less"
-			}
-		},
 		"customMade": {
 			"files": {
 				"client/stylesheets/css/consolidate.css": "client/stylesheets/less/_consolidate.less"
