@@ -1,22 +1,41 @@
-var loopback = require('loopback');
-var boot = require('loopback-boot');
+var Hapi = require('hapi');
+var GoodConsole = require('good');
 
-var app = module.exports = loopback();
+var server = new Hapi.Server();
 
-app.start = function() {
-  // start the web server
-  return app.listen(function() {
-    app.emit('started');
-    console.log('Web server listening at: %s', app.get('url'));
-  });
-};
+server.connection({
+	host: 'localhost',
+	port: 3000
+});
 
-// Bootstrap the application, configure models, datasources and middleware.
-// Sub-apps like REST API are mounted via boot scripts.
-boot(app, __dirname, function(err) {
-  if (err) throw err;
+server.route({
+	method: 'GET',
+	path: '/{param*}',
+	handler: {
+		directory: {
+			path: 'client/',
+			listing: true
+		}
+	}
+});
 
-  // start the server if `$ node server.js`
-  if (require.main === module)
-    app.start();
+server.register({
+	register: GoodConsole,
+	options: {
+		reporters: [{
+			reporter: require('good-console'),
+			events: {
+				response: '*',
+				log: '*'
+			}
+		}]
+	}
+}, function(error) {
+	if(error) {
+		throw error;
+	}
+
+	server.start(function() {
+		server.log("Info", "Server running at: ", server.info.uri);
+	});
 });
