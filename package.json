@@ -26,12 +26,10 @@
     "url": "http://github.com/hegdeashwin/nodemyadmin/wiki"
   },
   "dependencies": {
-    "compression": "^1.0.3",
     "elasticsearch": "^4.0.2",
-    "errorhandler": "^1.1.1",
-    "loopback": "^2.8.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-datasource-juggler": "^2.7.0",
+    "good": "^6.1.2",
+    "good-console": "^5.0.0",
+    "hapi": "^8.4.0",
     "mysql": "^2.6.2",
     "serve-favicon": "^2.0.1"
   },
@@ -52,9 +50,6 @@
     "grunt-shell": "~1.1.1",
     "grunt-strip": "~0.2.1",
     "time-grunt": "~1.1.0"
-  },
-  "optionalDependencies": {
-    "loopback-explorer": "^1.1.0"
   },
   "keywords": [],
   "engines": {
