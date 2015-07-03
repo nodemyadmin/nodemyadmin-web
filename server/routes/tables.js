@@ -1,7 +1,6 @@
 module.exports = function(Hapi, connection) {
 
 	return {
-
 		tables: function() {
 			return [{
 				method: 'GET',
