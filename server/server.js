@@ -3,11 +3,19 @@
  */
 var Hapi = require('hapi');
 var GoodConsole = require('good');
+var mysql = require('mysql');
 
 /**
  * List of configuration requires.
  */
 var properties = require('./configs/properties.config');
+var mysqlProperties = require('./configs/mysql.config');
+
+var connection = mysql.createConnection(mysqlProperties.connection);
+connection.connect();
+
+var databaseRoutes = require('./routes/databases');
+var dbApi = databaseRoutes(Hapi, connection);
 
 /**
  * Create a new hapi server object.
@@ -30,13 +38,15 @@ server.route({
 	path: '/{param*}',
 	handler: {
 		directory: {
-			path: 'client/',
-			listing: true,
-			index: true,
-			showHidden: true
+			path: properties.client.staticServe,
+			listing: properties.client.listing,
+			index: properties.client.index,
+			showHidden: properties.clientshowHidden
 		}
 	}
 });
+
+server.route(dbApi.databases());
 
 /**
  * Registers a plugin,
