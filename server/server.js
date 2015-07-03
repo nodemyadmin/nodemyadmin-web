@@ -30,10 +30,10 @@ server.route({
 	path: '/{param*}',
 	handler: {
 		directory: {
-			path: 'client/',
-			listing: true,
-			index: true,
-			showHidden: true
+			path: properties.client.staticServe,
+			listing: properties.client.listing,
+			index: properties.client.index,
+			showHidden: properties.clientshowHidden
 		}
 	}
 });
