@@ -6,7 +6,7 @@ module.exports = function(Hapi, connection) {
 			    method: 'GET',
 			    path: '/showDatabases',
 			    handler: function(request, reply) {
-			    	connection.query('show databases', function(error, rows) {
+			    	connection.query('SHOW DATABASES', function(error, rows) {
 						if (error) {
 							throw error;
 						}
@@ -20,7 +20,7 @@ module.exports = function(Hapi, connection) {
 				handler: function(request, reply) {
 					var dbName = request.payload.dbName;
 					
-					connection.query('use ' + dbName, function(error, rows) {
+					connection.query('USE ' + dbName, function(error, rows) {
 						if (error) {
 							throw error;
 						}
@@ -28,7 +28,35 @@ module.exports = function(Hapi, connection) {
 						reply(rows);
 					});
 				}
-			}]
+			}, {
+				method: 'POST',
+				path: '/createDatabase',
+				handler: function(request, reply) {
+					var dbName = request.payload.dbName;
+
+					connection.query('CREATE DATABASE ' + dbName, function(error, rows) {
+						if(error) {
+							throw error;
+						}
+
+						reply(rows);
+					});
+				}
+			}, {
+				method: 'DELETE',
+				path: '/dropDatabase',
+				handler: function(request, reply) {
+					var dbName = request.payload.dbName;
+
+					connection.query('DROP DATABASE IF EXISTS ' + dbName, function(error, rows) {
+						if(error) {
+							throw error;
+						}
+
+						reply(rows);
+					});
+				}
+			}];
 		}
 	};
 
