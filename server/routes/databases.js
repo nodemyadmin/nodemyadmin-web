@@ -28,7 +28,7 @@ module.exports = function(Hapi, connection) {
 						reply(rows);
 					});
 				}
-			}]
+			}];
 		}
 	};
 
