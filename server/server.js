@@ -3,16 +3,56 @@
  */
 var Hapi = require('hapi');
 var GoodConsole = require('good');
+var mysql = require('mysql');
 
 /**
  * List of configuration requires.
  */
 var properties = require('./configs/properties.config');
+var mysqlProperties = require('./configs/mysql.config');
 
 /**
  * Create a new hapi server object.
  */
 var server = new Hapi.Server();
+
+var connection = mysql.createConnection(mysqlProperties.connection);
+connection.connect();
+
+connection.query('show databases', function(error, rows) {
+	if (error) {
+		throw error;
+	}
+
+	console.log('List of Databases: ');
+	console.log(rows);
+});
+
+connection.query('use mysql', function(error) {
+	if (error) {
+		throw error;
+	}
+});
+
+connection.query('show tables', function(error, rows, fields) {
+	if (error) {
+		throw error;
+	}
+
+	console.log('List of Tables in mysql Database: ');
+	console.log(rows);
+});
+
+connection.query('SELECT host, user from user', function(error, rows) {
+	if (error) {
+		throw error;
+	}
+
+	console.log('List of Tables in mysql Database: ');
+	console.log(rows);
+});
+
+connection.end();
 
 /**
  * Add a connection to the server, passing in a port number to listen on.
