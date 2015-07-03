@@ -15,7 +15,7 @@ var connection = mysql.createConnection(mysqlProperties.connection);
 connection.connect();
 
 var databaseRoutes = require('./routes/databases');
-var dbApi = databaseRoutes(connection);
+var dbApi = databaseRoutes(Hapi, connection);
 
 /**
  * Create a new hapi server object.
@@ -46,7 +46,7 @@ server.route({
 	}
 });
 
-server.route(dbApi.showDatabases());
+server.route(dbApi.databases());
 
 /**
  * Registers a plugin,

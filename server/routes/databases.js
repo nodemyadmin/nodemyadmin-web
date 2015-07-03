@@ -1,10 +1,10 @@
-module.exports = function(connection) {
+module.exports = function(Hapi, connection) {
 
 	return {
-		showDatabases: function() {
+		databases: function() {
 			return [{
 			    method: 'GET',
-			    path: '/showdbs',
+			    path: '/showDatabases',
 			    handler: function(request, reply) {
 			    	connection.query('show databases', function(error, rows) {
 						if (error) {
@@ -14,6 +14,20 @@ module.exports = function(connection) {
 						reply(rows);
 					});
 			    }
+			}, {
+				method: 'POST',
+				path: '/useDatabase',
+				handler: function(request, reply) {
+					var dbName = request.payload.dbName;
+					
+					connection.query('use ' + dbName, function(error, rows) {
+						if (error) {
+							throw error;
+						}
+
+						reply(rows);
+					});
+				}
 			}]
 		}
 	};
