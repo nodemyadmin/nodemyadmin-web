@@ -1,4 +1,6 @@
-module.exports = function(Hapi, connection) {
+module.exports = function(connection, Joi) {
+
+	'use strict';
 
 	return {
 		runSQL: function() {
@@ -9,7 +11,7 @@ module.exports = function(Hapi, connection) {
 					var rawSQLQuery = request.payload.rawSQLQuery;
 
 					connection.query(rawSQLQuery, function(error, rows) {
-						if(error) {
+						if (error) {
 							throw error;
 						}
 

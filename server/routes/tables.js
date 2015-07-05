@@ -1,4 +1,6 @@
-module.exports = function(Hapi, connection) {
+module.exports = function(connection, Joi) {
+
+	'use strict';
 
 	return {
 		tables: function() {
@@ -7,7 +9,7 @@ module.exports = function(Hapi, connection) {
 				path: '/showTables',
 				handler: function(request, reply) {
 					connection.query('show tables', function(error, rows) {
-						if(error) {
+						if (error) {
 							throw error;
 						}
 
@@ -21,7 +23,35 @@ module.exports = function(Hapi, connection) {
 					var tblName = request.payload.tblName;
 
 					connection.query('SELECT * FROM ' + tblName, function(error, rows) {
-						if(error) {
+						if (error) {
+							throw error;
+						}
+
+						reply(rows);
+					});
+				}
+			}, {
+				method: 'POST',
+				path: '/describeTable',
+				handler: function(request, reply) {
+					var tblName = request.payload.tblName;
+
+					connection.query('DESCRIBE ' + tblName, function(error, rows) {
+						if (error) {
+							throw error;
+						}
+
+						reply(rows);
+					});
+				}
+			}, {
+				method: 'DELETE',
+				path: '/dropTable',
+				handler: function(request, reply) {
+					var tblName = request.payload.tblName;
+
+					connection.query('DROP TABLE ' + tblName, function(error, rows) {
+						if (error) {
 							throw error;
 						}
 
