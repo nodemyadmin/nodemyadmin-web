@@ -5,7 +5,7 @@ module.exports = {
 		"address": "localhost"
 	},
 	"client": {
-		"staticServe": "../client",
+		"staticServe": "client",
 		"listing": true,
 		"index": true,
 		"showHidden": true
