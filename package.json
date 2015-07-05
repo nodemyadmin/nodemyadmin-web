@@ -3,12 +3,10 @@
   "version": "0.0.0",
   "author": "Ashwin Hegde",
   "description": "A tool intended to handle the administration of MySQL over the web for JavaScript developers",
-  "contributors": [
-    {
-      "name": "Ashwin Hegde",
-      "email": "ashwin.hegde3@gmail.com"
-    }
-  ],
+  "contributors": [{
+    "name": "Ashwin Hegde",
+    "email": "ashwin.hegde3@gmail.com"
+  }],
   "repository": {
     "type": "git",
     "url": "http://github.com/hegdeashwin/nodemyadmin"
@@ -29,6 +27,7 @@
     "good": "^6.2.0",
     "good-console": "^5.0.2",
     "hapi": "^8.6.1",
+    "joi": "^6.5.0",
     "mysql": "^2.7.0"
   },
   "devDependencies": {
@@ -53,10 +52,8 @@
   "engines": {
     "node": ">=0.10"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://raw.github.com/hegdeashwin/Protocore/master/LICENSE"
-    }
-  ]
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://raw.github.com/hegdeashwin/Protocore/master/LICENSE"
+  }]
 }

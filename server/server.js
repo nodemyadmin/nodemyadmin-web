@@ -1,27 +1,36 @@
 /**
  * List of 3rd party npms requires.
  */
-var Hapi = require('hapi');
-var GoodConsole = require('good');
-var mysql = require('mysql');
+var Hapi = require('hapi'),
+	GoodConsole = require('good'),
+	mysql = require('mysql'),
+	Joi = require('joi');
 
 /**
  * List of configuration requires.
  */
-var properties = require('./configs/properties.config');
-var mysqlProperties = require('./configs/mysql.config');
+var properties = require('./configs/properties.config'),
+	mysqlProperties = require('./configs/mysql.config');
 
+/**
+ * Create Mysql Connection.
+ */
 var connection = mysql.createConnection(mysqlProperties.connection);
 connection.connect();
 
+/**
+ * Fetch all routes module.
+ */
 var databaseRoutes = require('./routes/databases');
 var tableRoutes = require('./routes/tables');
 var runSQLRoutes = require('./routes/sql');
 
-var dbApi = databaseRoutes(Hapi, connection);
-var tblApi = tableRoutes(Hapi, connection);
-var sqlApi = runSQLRoutes(Hapi, connection);
-
+/**
+ * Pass Mysql session connection and Joi to routes apis.
+ */
+var dbApi = databaseRoutes(connection, Joi);
+var tblApi = tableRoutes(connection, Joi);
+var sqlApi = runSQLRoutes(connection, Joi);
 
 /**
  * Create a new hapi server object.
@@ -72,7 +81,7 @@ server.register({
 		}]
 	}
 }, function(error) {
-	if(error) {
+	if (error) {
 		throw error;
 	}
 
@@ -83,7 +92,7 @@ server.register({
 	 */
 	server.start(function(error) {
 
-		if(error) {
+		if (error) {
 			throw error;
 		}
 		/**
