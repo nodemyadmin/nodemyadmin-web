@@ -4,8 +4,11 @@ An open source software tool intended to handle the administration of MySQL over
 
 
 nodemyadmin is written using below technology stacks:
-* Server: Server side JavaScript (Node.js) using Hapi framework, MySQL etc.
-* Client: Client side JavaScript (Backbone.js) using Marionette framework, Grunt, bower etc.
+Server: Server side JavaScript (Node.js)
+* Hapi, Joi, MySQL, Good, Good-console etc.
+
+Client: Client side JavaScript 
+* Yet to be finallize - Coming soon
 
 The MIT License (MIT)
 
