@@ -17,4 +17,7 @@ $(document).ready(function() { /* activate sidebar */
 	$('.chosen-select').chosen();
 
 	$('#databaseList').dataTable();
+
+	$('#databases').treed();
+	
 });

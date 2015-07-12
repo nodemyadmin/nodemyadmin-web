@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="styles/custom.css">
         <link rel="stylesheet" type="text/css" href="styles/chosen/bootstrap-chosen.css">
         <link rel="stylesheet" type="text/css" href="styles/dataTables.bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles/treeview.css">
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -71,60 +72,65 @@
         <div id="masthead">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
-
-                    </div>
-                    </div class="col-md-3">
-                        
-                    </div>
-                    <!-- <nav class="navbar navbar-default" role="banner">
+                    <nav class="navbar navbar-default" role="banner">
                         <div class="container">
                             <nav class="collapse navbar-collapse" role="navigation">
-
-                                <div class="col-md-9">
-                                    <ol class="breadcrumb">
-                                        <li><a href="#">Home</a></li>
-                                        <li class="active">Dashboard</li>
-                                    </ol>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quick Switch 1 <span class="caret"></span></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#" target="_blank">Item 1</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="#">Databases</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">SQL</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">User Account</a>
+                                    </li>
+                                </ul>
                             </nav>
                         </div>
-                    </nav> -->
+                    </nav>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3" id="leftCol">
-                    <ul class="nav nav-stacked" id="sidebar">
-                        <li>
-                            <a href="#sec0">Section 0</a>
+                    <ul id="databases">
+                        <li><a href="#">TECH</a>
+                            <ul>
+                                <li>Company Maintenance</li>
+                                <li>Employees
+                                    <ul>
+                                        <li>Reports
+                                            <ul>
+                                                <li>Report1</li>
+                                                <li>Report2</li>
+                                                <li>Report3</li>
+                                            </ul>
+                                        </li>
+                                        <li>Employee Maint.</li>
+                                    </ul>
+                                </li>
+                                <li>Human Resources</li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#sec1">Section 1</a>
-                        </li>
-                        <li>
-                            <a href="#sec2">Section 2</a>
-                        </li>
-                        <li>
-                            <a href="#sec3">Section 3</a>
-                        </li>
-                        <li>
-                            <a href="#sec4">Section 4</a>
+                        <li>XRP
+                            <ul>
+                                <li>Company Maintenance</li>
+                                <li>Employees
+                                    <ul>
+                                        <li>Reports
+                                            <ul>
+                                                <li>Report1</li>
+                                                <li>Report2</li>
+                                                <li>Report3</li>
+                                            </ul>
+                                        </li>
+                                        <li>Employee Maint.</li>
+                                    </ul>
+                                </li>
+                                <li>Human Resources</li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -185,7 +191,7 @@
 
                         <div class="col-md-6 pad-right">
                             <div class="panel panel-primary">                          
-                                <div class="panel-heading">Panel heading</div>
+                                <div class="panel-heading">Recent Database Access</div>
                                 <div class="panel-body">
                                     <p>...</p>
                                 </div>
@@ -356,17 +362,6 @@
                             <div class="panel-footer">Panel footer</div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="panel panel-primary">                          
-                            <div class="panel-heading">Panel heading</div>
-                            <div class="panel-body">
-                                <p>...</p>
-                            </div>
-                            <div class="panel-footer">Panel footer</div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div><script type="text/javascript" src="styles/jquery.min.js">
@@ -377,5 +372,6 @@
 
 <script type="text/javascript" src="scripts/dataTables.min.js"></script>
 <script type="text/javascript" src="scripts/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="scripts/treeview.js"></script>
     </body>
 </html>
