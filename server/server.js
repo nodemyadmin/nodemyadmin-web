@@ -2,7 +2,6 @@
  * List of 3rd party npms requires.
  */
 var Hapi = require('hapi'),
-	GoodConsole = require('good'),
 	mysql = require('mysql'),
 	Joi = require('joi');
 
@@ -21,16 +20,16 @@ connection.connect();
 /**
  * Fetch all routes module.
  */
-var databaseRoutes = require('./routes/databases');
-var tableRoutes = require('./routes/tables');
-var runSQLRoutes = require('./routes/sql');
+var databaseRoutes = require('./routes/v1/databases'),
+	tableRoutes = require('./routes/v1/tables'),
+	runSQLRoutes = require('./routes/v1/sql');
 
 /**
- * Pass Mysql session connection and Joi to routes apis.
+ * Passing Mysql session connection and Joi to routes apis.
  */
-var dbApi = databaseRoutes(connection, Joi);
-var tblApi = tableRoutes(connection, Joi);
-var sqlApi = runSQLRoutes(connection, Joi);
+var dbApi = databaseRoutes(connection, Joi),
+	tblApi = tableRoutes(connection, Joi),
+	sqlApi = runSQLRoutes(connection, Joi);
 
 /**
  * Create a new hapi server object.
@@ -70,7 +69,7 @@ server.route(sqlApi.runSQL());
  * Here, Good, Good-console are being register to server.
  */
 server.register({
-	register: GoodConsole,
+	register: require('good'),
 	options: {
 		reporters: [{
 			reporter: require('good-console'),

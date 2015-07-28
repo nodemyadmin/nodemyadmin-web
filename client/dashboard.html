@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="menu">
+      <div class="container">
+          <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span></button> <a href="/" class="navbar-brand">nodemyadmin <sup><small>v0.0.0 Alpha</small><sup></a>
+          </div>
+          <nav class="collapse navbar-collapse" role="navigation">
+               <ul class="nav navbar-nav">
+                  <li>
+                      <a href="#">Dashboard</a>
+                  </li>
+              </ul>
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">System <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                              <a href="#" target="_blank">Settings</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin" target="_blank">Github Home Page</a>
+                          </li>
+                          <li>
+                              <a href="#" target="_blank">Gitbook Page</a>
+                          </li>
+                          <li class="divider"></li>
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin/releases" target="_blank">Release Page</a>
+                          </li>
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin/milestones" target="_blank">Milestones</a>
+                          </li>
+                          <li class="divider"></li>
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin/issues" target="_blank">Issues Page</a>
+                          </li>
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin/pulls" target="_blank">Open Pull Requests</a>
+                          </li>
+                          <li class="divider"></li>
+                          <li>
+                              <a href="https://github.com/hegdeashwin/nodemyadmin" target="_blank">About nodemyadmin</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+    </nav>
+
+    <div id="masthead">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#">Databases</a>
+                                </li>
+                                <li>
+                                    <a href="#">SQL</a>
+                                </li>
+                                <li>
+                                    <a href="#">User Account</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+              <div class="alert alert-info alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                <p>Application Global Level Message</p>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+              <ol class="breadcrumb">
+                <li><a href="#">Dashboard</a></li>
+                <li class="active">Database</li>
+              </ol>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 pad-left">
+            <div class="panel-group" id="aside-collapse" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#aside-collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Database Explorer
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                      <p>Panel/Module Level Message</p>
+                    </div>
+                    <ul id="databases">
+                      <li><a href="#">TECH</a>
+                          <ul>
+                              <li>Company Maintenance</li>
+                              <li>Employees
+                                  <ul>
+                                      <li>Reports
+                                          <ul>
+                                              <li>Report1</li>
+                                              <li>Report2</li>
+                                              <li>Report3</li>
+                                          </ul>
+                                      </li>
+                                      <li>Employee Maint.</li>
+                                  </ul>
+                              </li>
+                              <li>Human Resources</li>
+                          </ul>
+                      </li>
+                      <li>XRP
+                          <ul>
+                              <li>Company Maintenance</li>
+                              <li>Employees
+                                  <ul>
+                                      <li>Reports
+                                          <ul>
+                                              <li>Report1</li>
+                                              <li>Report2</li>
+                                              <li>Report3</li>
+                                          </ul>
+                                      </li>
+                                      <li>Employee Maint.</li>
+                                  </ul>
+                              </li>
+                              <li>Human Resources</li>
+                          </ul>
+                      </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#aside-collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Collapsible Group Item #2
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="alert alert-success alert-dismissible fade in" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                  <p>Page Level Message</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 pad-left">
+                    <div class="panel panel-primary">                          
+                        <div class="panel-heading">
+                            <span class="panel-title"><i class="fa fa-database"></i> Create a new database</span>
+                            <div class="pull-right">
+                                <a class="btn btn-xs btn-default" data-toggle="collapse" href="#createDatabasePanel"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div id="createDatabasePanel" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                              <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                                <p>Panel/Module Level Message</p>
+                              </div>
+                              <form>
+                                <div class="form-group">
+                                  <label for="dbName">Enter the database name</label>
+                                  <input type="text" class="form-control" id="dbName" maxlength="255" placeholder="Maximum 255 characters.">
+                                </div>
+                                <div class="form-group">
+                                  <label for="collation">Select database collation</label>
+                                  <select data-placeholder="Choose a collation" class="chosen-select">
+                                      <option value=""></option>
+                                      <option value="United States">United States</option>
+                                      <option value="United Kingdom">United Kingdom</option>
+                                      <option value="Afghanistan">Afghanistan</option>
+                                      <option value="Albania">Albania</option>
+                                      <option value="Algeria">Algeria</option>
+                                      <option value="American Samoa">American Samoa</option>
+                                      <option value="Andorra">Andorra</option>
+                                      <option value="Angola">Angola</option>
+                                      <option value="Anguilla">Anguilla</option>
+                                      <option value="Antarctica">Antarctica</option>
+                                  </select>
+                                </div>
+                              </form>
+                          </div>
+                          <div class="panel-footer">
+                              <button type="button" class="btn btn-success">Create database</button>
+                              <a class="btn btn-success pull-right"><i class="fa fa-question-circle"></i></a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 pad-right">
+                    <div class="panel panel-primary">                          
+                        <div class="panel-heading">
+                            <span class="panel-title"><i class="fa fa-database"></i> Databases List</span>
+                            <div class="pull-right">
+                                <a class="btn btn-xs btn-default" data-toggle="collapse" href="#listDatabasePanel"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div id="listDatabasePanel" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                              <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                                <p>Panel/Module Level Message</p>
+                              </div>
+                              <table id="databaseList" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                          <input type="checkbox">
+                                        </th>
+                                        <th>
+                                          Database Name
+                                        </th>
+                                        <th class="text-center">
+                                          Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th class="text-center">
+                                          <input type="checkbox">
+                                        </th>
+                                        <th>
+                                          Database Name
+                                        </th>
+                                        <th class="text-center">
+                                          Action
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                          <input type="checkbox">
+                                        </td>
+                                        <td>
+                                          MySQL
+                                        </td>
+                                        <td class="text-center">
+                                          <button class="btn btn-xs btn-default"><i class="fa fa-expand"></i></button>
+                                          <button class="btn btn-xs btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="scripts/angular.min.js"></script>
+
+  	<script type="text/javascript" src="app/appModule.js"></script>
+
+    <script>
+      $('#aside-collapse').collapse({
+        toggle: true
+      })
+    </script>
+	</body>
+</html>

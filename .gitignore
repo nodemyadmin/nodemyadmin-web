@@ -28,3 +28,4 @@ client/prod
 node_modules
 client/bower_components
 client/stylesheets/css
+static-html

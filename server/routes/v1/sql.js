@@ -6,7 +6,7 @@ module.exports = function(connection, Joi) {
 		runSQL: function() {
 			return [{
 				method: 'POST',
-				path: '/runSQL',
+				path: '/api/v1/sql/run',
 				handler: function(request, reply) {
 					var rawSQLQuery = request.payload.rawSQLQuery;
 
