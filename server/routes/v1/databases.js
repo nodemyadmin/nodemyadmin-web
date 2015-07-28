@@ -6,7 +6,7 @@ module.exports = function(connection, Joi) {
 		databases: function() {
 			return [{
 				method: 'GET',
-				path: '/showDatabases',
+				path: '/api/v1/databases/show',
 				handler: function(request, reply) {
 					connection.query('SHOW DATABASES', function(error, rows) {
 						if (error) {
@@ -18,7 +18,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'POST',
-				path: '/useDatabase',
+				path: '/api/v1/database/use',
 				handler: function(request, reply) {
 					var dbName = request.payload.dbName;
 
@@ -39,7 +39,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'POST',
-				path: '/createDatabase',
+				path: '/api/v1/database/create',
 				handler: function(request, reply) {
 					var dbName = request.payload.dbName;
 
@@ -53,7 +53,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'DELETE',
-				path: '/dropDatabase',
+				path: '/api/v1/database/drop',
 				handler: function(request, reply) {
 					var dbName = request.payload.dbName;
 

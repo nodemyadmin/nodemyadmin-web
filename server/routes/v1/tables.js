@@ -6,7 +6,7 @@ module.exports = function(connection, Joi) {
 		tables: function() {
 			return [{
 				method: 'GET',
-				path: '/showTables',
+				path: '/api/v1/tables/show',
 				handler: function(request, reply) {
 					connection.query('show tables', function(error, rows) {
 						if (error) {
@@ -18,7 +18,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'POST',
-				path: '/selectTable',
+				path: '/api/v1/table/select',
 				handler: function(request, reply) {
 					var tblName = request.payload.tblName;
 
@@ -32,7 +32,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'POST',
-				path: '/describeTable',
+				path: '/api/v1/table/describe',
 				handler: function(request, reply) {
 					var tblName = request.payload.tblName;
 
@@ -46,7 +46,7 @@ module.exports = function(connection, Joi) {
 				}
 			}, {
 				method: 'DELETE',
-				path: '/dropTable',
+				path: '/api/v1/table/drop',
 				handler: function(request, reply) {
 					var tblName = request.payload.tblName;
 
