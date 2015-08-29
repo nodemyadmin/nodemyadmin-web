@@ -17,6 +17,13 @@ module.exports = function(connection, Joi) {
 
 						reply(rows);
 					});
+				},
+				config: {
+					validate: {
+						payload: {
+							rawSQLQuery: Joi.string().required()
+						}
+					}
 				}
 			}];
 		}

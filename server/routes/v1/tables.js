@@ -29,6 +29,13 @@ module.exports = function(connection, Joi) {
 
 						reply(rows);
 					});
+				},
+				config: {
+					validate: {
+						payload: {
+							tblName: Joi.string().alphanum().min(1).max(64).required()
+						}
+					}
 				}
 			}, {
 				method: 'POST',
@@ -43,6 +50,13 @@ module.exports = function(connection, Joi) {
 
 						reply(rows);
 					});
+				},
+				config: {
+					validate: {
+						payload: {
+							tblName: Joi.string().alphanum().min(1).max(64).required()
+						}
+					}
 				}
 			}, {
 				method: 'DELETE',
@@ -57,6 +71,13 @@ module.exports = function(connection, Joi) {
 
 						reply(rows);
 					});
+				},
+				config: {
+					validate: {
+						payload: {
+							tblName: Joi.string().alphanum().min(1).max(64).required()
+						}
+					}
 				}
 			}];
 		}
