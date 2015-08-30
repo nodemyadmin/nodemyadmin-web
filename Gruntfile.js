@@ -2,134 +2,93 @@ module.exports = function(grunt) {
     'use strict';
 
     /**
-     * Require it at the top and pass in the grunt instance
-     */
-    require('time-grunt')(grunt);
-
-    /**
      * Setup configuration
      */
     grunt.initConfig({
-        serve: grunt.file.readJSON('client/config/servefiles.json'),
-        program: grunt.file.readJSON('package.json'),
-        buildTags: "/* Project Name : <%= program.name %> , Release version : <%= program.version %> */",
+        serve: grunt.file.readJSON('./configs/serve.files.json'),
+        product: grunt.file.readJSON('package.json'),
         clean: {
-            build: ['client/prod']
-        },
-        usebanner: {
-            buildTags: {
-                options: {
-                    position: 'top',
-                    banner: '<%= buildTags %>',
-                    linebreak: true
-                }
-            }
+            build: ['<%= serve.build.dir %>']
         },
         jsonlint: {
             files: {
-                src: '<%= serve.jsonlint %>'
-            }
-        },
-        shell: {
-            uglify: {
-                command: [
-                    'node client/bower_components/rjs/dist/r.js -o client/config/build/optimize-build.js',
-                    'node client/bower_components/rjs/dist/r.js -o client/config/build/copy-build.js',
-                    'rm client/main-optimize.js',
-                    'rm client/prod/main.js',
-                    'mv client/prod/main-optimize.js client/prod/main.js'
-                ].join('&&')
+                src: '<%= serve.lint.json.files %>'
             }
         },
         jshint: {
             options: {
-                jshintrc: 'client/config/lints/.jshintrc',
-                ignores: '<%= serve.jshint.ignore %>'
+                jshintrc: '<%= serve.lint.js.rules %>',
+                ignores: '<%= serve.lint.js.ignore %>'
             },
-            all: '<%= serve.jshint.files %>'
+            all: '<%= serve.lint.js.files %>'
         },
         jscs: {
             options: {
-                config: 'client/config/lints/.jscsrc'
+                config: '<%= serve.lint.jscs.rules %>'
             },
-            src: '<%= serve.jscs.files %>',
+            src: '<%= serve.lint.jscs.files %>',
         },
         csslint: {
             strict: {
                 options: {
-                    csslintrc: 'client/config/lints/.csslintrc',
-                    ignores: '<%= serve.csslint.ignore %>'
+                    csslintrc: '<%= serve.lint.css.rules %>',
+                    ignores: '<%= serve.lint.css.ignore %>'
                 },
-                src: '<%= serve.csslint.files %>'
+                src: '<%= serve.lint.css.files %>'
             }
         },
         htmlhint: {
-            Root_HTML_Files: {
+            gateway: {
                 options: {
-                    htmlhintrc: 'client/config/lints/.htmlhint-n-rc',
-                    ignores: '<%= serve.htmlhint.Root_HTML_Files.ignore %>'
+                    htmlhintrc: '<%= serve.lint.html.gateway.rules %>',
+                    ignores: '<%= serve.lint.html.gateway.ignore %>'
                 },
-                src: '<%= serve.htmlhint.Root_HTML_Files.files %>'
+                src: '<%= serve.lint.html.gateway.files %>'
             },
-            Templates: {
+            templates: {
                 options: {
-                    htmlhintrc: 'client/config/lints/.htmlhint-t-rc',
-                    ignores: '<%= serve.htmlhint.Templates.ignore %>'
+                    htmlhintrc: '<%= serve.lint.html.templates.rules %>',
+                    ignores: '<%= serve.lint.html.templates.ignore %>'
                 },
-                src: '<%= serve.htmlhint.Templates.files %>'
-
+                src: '<%= serve.lint.html.templates.files %>'
             }
         },
         less: {
-            customMade: {
-                options: {
-                    compress: false
-                },
-                files: '<%= serve.less.customMade.files %>'
+            dev: {
+                options: '<%= serve.compile.less.dev.options %>',
+                files: '<%= serve.compile.less.dev.files %>'
             },
             prod: {
-                options: {
-                    compress: true
-                },
-                files: '<%= serve.less.customMade.files %>'
+                options: '<%= serve.compile.less.prod.options %>',
+                files: '<%= serve.compile.less.prod.files %>'
             }
         },
         watch: {
             less: {
-                options: {
-                    spawn: false
-                },
-                files: '<%= serve.watch.less.files %>',
-                tasks: ['less:customMade']
-            }
-        },
-        strip: {
-            main: {
-                src: 'client/prod/apps/**/*.js',
-                options: {
-                    inline: true,
-                    nodes: ['console.log', 'debug']
-                }
-            }
-        },
-        autoprefixer: {
-            options: {
-                'browsers': ['last 2 versions']
-            },
-            multiple: {
-                expand: true,
-                flatten: true,
-                src: 'client/stylesheets/css/common/*.css',
-                dest: 'client/stylesheets/css/common/'
+                options: '<%= serve.compile.watch.less.options %>',
+                files: '<%= serve.compile.less.dev.files %>',
+                tasks: ['less:dev']
             }
         },
         htmlmin: {
             dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: '<%= serve.htmlmin.files %>'
+                options: '<%= serve.build.html.options %>',
+                files: '<%= serve.build.html.files %>'
+            }
+        },
+        browserify: {
+            dist: {
+                files: {
+                    '<%= serve.build.browserify.files.dest %>': ['<%= serve.build.browserify.files.src %>']
+                }
+            }
+        },
+        uglify: {
+            options: '<%= serve.build.uglify.options %>',
+            my_target: {
+                files: {
+                    '<%= serve.build.uglify.files.dest %>': ['<%= serve.build.uglify.files.src %>']
+                }
             }
         }
     });
@@ -139,68 +98,62 @@ module.exports = function(grunt) {
      */
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-strip');
-    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-htmlhint');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-jsonlint');
-    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     /**
-     * Define tasks : Tasks for development eco - system.
+     * `default` task performs all types of linting & less compilation for development purpose.
      */
     grunt.registerTask('default', [
         'htmlhint',
         'jsonlint',
-        'jscs',
         'jshint',
-        'compileLessDev',
-        'autofix',
+        'jscs',
+        'lessdev',
         'csslint'
     ]);
-    grunt.registerTask('dev', ['default']); // Alias for `default`.
 
     /**
-     * Define tasks : Tasks for build eco - system.
+     * `build` task performs all types of linting & less compilation for production purpose.
      */
     grunt.registerTask('build', [
         'htmlhint',
         'jsonlint',
-        'jscs',
         'jshint',
-        'compileLessProd',
-        'autofix',
+        'jscs',
+        'lessprod',
         'csslint',
         'clean',
-        'strip',
-        'shell',
-        'htmlmin',
-        'usebanner'
+        'browserify',
+        'uglify',
+        'htmlmin'
     ]);
 
     /**
-     * Define sub-tasks : Tasks for Less compilation.
+     * `lessdev` task perform less compilation for development purpose.
      */
-    grunt.registerTask('compileless', ['less:customMade']);
+    grunt.registerTask('lessdev', ['less:dev']);
 
     /**
-     * Define sub-tasks : Tasks for Less compilation for development.
+     * `lessprod` task perform less compilation for production purpose.
      */
-    grunt.registerTask('compileLessDev', ['less:customMade']);
+    grunt.registerTask('lessprod', ['less:prod']);
 
     /**
-     * Define sub-tasks : Tasks for Less compilation for production.
+     * `lintjs` task perform all types of JavaScript linting.
      */
-    grunt.registerTask('compileLessProd', ['less:readyMade', 'less:prod']);
+    grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs']);
 
     /**
-     * Define sub-tasks : Alias for `autofix`
+     * `lintcss` task perform all types of CSS linting.
      */
-    grunt.registerTask('autofix', ['autoprefixer']);
+    grunt.registerTask('lintcss', ['lessdev', 'csslint']);
 
 };
