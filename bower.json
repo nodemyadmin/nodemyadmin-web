@@ -1,21 +1,26 @@
 {
-	"name": "nodemyadmin",
-	"version": "0.0.0",
-	"homepage": "https://github.com/hegdeashwin/nodemyadmin",
-	"authors": [
-		"hegdeashwin <ashwin.hegde3@gmail.com>"
-	],
-	"dependencies": {
-		"bootstrap": "3.1.0"
-	},
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests",
-		"prod"
-	],
-	"keywords": ["mysqladmin", "mysql", "nodemysql"],
-	"license": "MIT"
+  "name": "nodemyadmin",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hegdeashwin/nodemyadmin",
+  "authors": [
+    "hegdeashwin <ashwin.hegde3@gmail.com>"
+  ],
+  "dependencies": {
+    "bootstrap": "3.1.0",
+    "font-awesome": "~4.4.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "prod"
+  ],
+  "keywords": [
+    "mysqladmin",
+    "mysql",
+    "nodemysql"
+  ],
+  "license": "MIT"
 }
