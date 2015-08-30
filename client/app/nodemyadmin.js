@@ -3,7 +3,7 @@
 
 	var angular = require('angular');
 
-	var app = angular.module('forkgen', [
+	var app = angular.module('nodemyadmin', [
 		require('angular-ui-router')
 	]);
 
