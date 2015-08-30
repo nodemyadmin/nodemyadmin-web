@@ -90,6 +90,14 @@ module.exports = function(grunt) {
                     '<%= serve.build.uglify.files.dest %>': ['<%= serve.build.uglify.files.src %>']
                 }
             }
+        },
+        karma: {
+            unit: {
+                configFile: '<%= serve.tests.karma.configFile %>',
+                options: {
+                    files: ['<%= serve.tests.karma.files %>']
+                }
+            }
         }
     });
 
@@ -107,6 +115,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jsonlint');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-karma');
 
     /**
      * `default` task performs all types of linting & less compilation for development purpose.
