@@ -8,13 +8,13 @@ var Hapi = require('hapi'),
 /**
  * List of configuration requires.
  */
-var properties = require('../configs/stack.conf'),
-	mysqlProperties = require('../configs/mysql.conf');
+var STACKCONF = require('../configs/stack.conf'),
+	MYSQLCONF = require('../configs/mysql.conf');
 
 /**
  * Create Mysql Connection.
  */
-var connection = mysql.createConnection(mysqlProperties.connection);
+var connection = mysql.createConnection(MYSQLCONF.create.connection);
 connection.connect();
 
 /**
@@ -40,8 +40,8 @@ var server = new Hapi.Server();
  * Add a connection to the server, passing in a port number to listen on.
  */
 server.connection({
-	"host": properties.server.host,
-	"port": properties.server.port
+	"host": STACKCONF.server.host,
+	"port": STACKCONF.server.port
 });
 
 /**
@@ -52,10 +52,10 @@ server.route({
 	path: '/{param*}',
 	handler: {
 		directory: {
-			path: properties.client.staticServe,
-			listing: properties.client.listing,
-			index: properties.client.index,
-			showHidden: properties.clientshowHidden
+			path: STACKCONF.client.staticServe,
+			listing: STACKCONF.client.listing,
+			index: STACKCONF.client.index,
+			showHidden: STACKCONF.clientshowHidden
 		}
 	}
 });
