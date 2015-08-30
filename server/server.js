@@ -8,8 +8,8 @@ var Hapi = require('hapi'),
 /**
  * List of configuration requires.
  */
-var properties = require('./configs/properties.config'),
-	mysqlProperties = require('./configs/mysql.config');
+var properties = require('../configs/properties.config'),
+	mysqlProperties = require('../configs/mysql.config');
 
 /**
  * Create Mysql Connection.
