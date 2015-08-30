@@ -103,5 +103,11 @@
 				"./client-prod/index.html": "./client/index.html"
 			}
 		}
+	},
+	"tests": {
+		"karma": {
+			"configFile": "./configs/karma.conf.js",
+			"files": "./client/test/**/*.js"
+		}
 	}
 }
