@@ -5,6 +5,16 @@
  */
 
 @font-face {
-    font-family: @segoeui;
-    src: url("../../../assets/fonts/segoeui.ttf");
+	font-family: @Montserrat, arial;
+	src: url('../../../assets/fonts/montserrat-regular-webfont.eot');
+	src: url('../../../assets/fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../../assets/fonts/montserrat-regular-webfont.woff') format('woff'), url('../../../assets/fonts/montserrat-regular-webfont.ttf') format('truetype'), url('../../../assets/fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	@font-face {
+		font-family: @Montserrat, arial;
+		src: url('../../../assets/fonts/montserrat-regular-webfont.svg') format('svg');
+	}
 }
