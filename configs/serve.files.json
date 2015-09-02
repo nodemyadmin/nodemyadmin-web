@@ -53,13 +53,9 @@
 				"options": {
 					"compress": false
 				},
-				"files": ""
-			},
-			"prod": {
-				"options": {
-					"compress": true
-				},
-				"files": ""
+				"files": {
+					"./client/stylesheets/css/consolidate.css": "./client/stylesheets/less/_consolidate.less"
+				}
 			}
 		},
 		"watch": {
@@ -100,7 +96,22 @@
 				"collapseWhitespace": true
 			},
 			"files": {
-				"./client-prod/index.html": "./client/index.html"
+				"./client-prod/index.html": "./client/index.html",
+				"./client-prod/app/signin/signin-tpl.html": "./client/app/signin/signin-tpl.html"
+			}
+		},
+		"css": {
+			"options": {
+				"compress": true
+			},
+			"files": {
+				"./client-prod/stylesheets/css/consolidate.min.css": "./client/stylesheets/less/_consolidate.less"
+			}
+		},
+		"assets": {
+			"files": {
+				"src": "./client/assets/fonts/*",
+				"dest": "./client-prod/assets/fonts/"
 			}
 		}
 	},

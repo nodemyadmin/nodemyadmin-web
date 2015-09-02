@@ -59,8 +59,8 @@ module.exports = function(grunt) {
                 files: '<%= serve.compile.less.dev.files %>'
             },
             prod: {
-                options: '<%= serve.compile.less.prod.options %>',
-                files: '<%= serve.compile.less.prod.files %>'
+                options: '<%= serve.build.css.options %>',
+                files: '<%= serve.build.css.files %>'
             }
         },
         watch: {
@@ -98,6 +98,9 @@ module.exports = function(grunt) {
                     files: ['<%= serve.tests.karma.files %>']
                 }
             }
+        },
+        copy: {
+            main: '<%= serve.build.assets.files %>'
         }
     });
 
@@ -116,6 +119,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     /**
      * `default` task performs all types of linting & less compilation for development purpose.
@@ -137,12 +141,12 @@ module.exports = function(grunt) {
         'jsonlint',
         'jshint',
         'jscs',
-        'lessprod',
-        'csslint',
         'clean',
         'browserify',
         'uglify',
-        'htmlmin'
+        'htmlmin',
+        'lessprod',
+        'copy'
     ]);
 
     /**
@@ -164,5 +168,4 @@ module.exports = function(grunt) {
      * `lintcss` task perform all types of CSS linting.
      */
     grunt.registerTask('lintcss', ['lessdev', 'csslint']);
-
 };
