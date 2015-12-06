@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="override.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+
+    <div class="container signin-container">
+
+      <div class="jumbotron">
+        <div class="container">
+          <div class="col-md-6">
+            <h1>nodemyadmin <sup><small>v0.0.0 Alpha</small></sup></h1>
+            <p>A tool intended to handle the administration of MySQL over the web for JavaScript developers</p>
+            <hr/>
+            <div class="feature-container">
+              <div class="media">
+                <div class="media-left media-top">
+                  <a title="Up and running on Mobile, Tablet and iPad devices">
+                    <i class="fa fa-2x fa-tablet"></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading text-primary">Up and running on Mobile, Tablet and iPad devices.</h4>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left media-top">
+                  <a title="Build for local, private environment">
+                    <i class="fa fa-2x fa-map-marker"></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading text-primary">Build for local, private environment.</h4>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left media-top">
+                  <a title="Build for local, private environment">
+                    <i class="fa fa-2x fa-map-marker"></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading text-primary">Build for local, private environment.</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+             <div class="panel panel-primary login-panel">
+               <div class="panel-heading">
+                 <i class="fa fa-lg fa-sign-in"></i> Sign in to your nodemyadmin account
+               </div>
+               <div class="panel-body">
+                 <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle-o"></i></span></button>
+                   <p>Please try again using your valid username and password.</p>
+                 </div>
+                 <form>
+                   <div class="form-group">
+                     <label for="mysqlUsername">Username</label>
+                     <input type="text" class="form-control" id="mysqlUsername" placeholder="Username">
+                   </div>
+                   <div class="form-group">
+                     <label for="mysqlPassword">Password</label>
+                     <input type="password" class="form-control" id="mysqlPassword" placeholder="Password">
+                   </div>
+                 </form>
+               </div>
+               <div class="panel-footer">
+                 <button type="submit" class="btn btn-primary">Sign in</button>
+                 <a class="btn btn-success pull-right"><i class="fa fa-lg fa-question-circle"></i></a>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-inverse">
+              <div class="container">
+                <p class="navbar-text">
+                  Copyright &copy; 2015 <a title="Core Developer" href="//github.com/hegdeashwin" target="_blank">Ashwin Hegde</a> | <a title="Contributors" href="//github.com/hegdeashwin/nodemyadmin/graphs/contributors" target="_blank">Contributions</a>, <a title="The MIT License (MIT)" href="//raw.githubusercontent.com/hegdeashwin/nodemyadmin/master/LICENSE" target="_blank">The MIT License (MIT)</a>
+                </p>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
