@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Projects</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="override.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="myprojects.css" />
+    <link rel="stylesheet" href="components.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <i class="fa fa-bars fa-lg"></i>
+          </button>
+          <a class="navbar-brand" href="#" title="nodemyadmin v0.0.0 Alpha">nodemyadmin <sup><small>v0.0.0 Alpha</small></sup></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" title="Home"><i class="fa fa-lg fa-home"></i></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Developers Connection"><i class="fa fa-connectdevelop fa-lg"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a title="Take a Tour" href="#">Take a Tour</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="API Explorer" href="#" target="_blank">API Explorer</a>
+                </li>
+                <li>
+                  <a title="Documentation" href="#" target="_blank">Documentation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="More Information, Help etc.">
+                <i class="fa fa-lg fa-life-saver"></i> <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a title="Github Home Page" href="//github.com/hegdeashwin/nodemyadmin" target="_blank">Github Home Page</a>
+                </li>
+                <li>
+                  <a title="Gitbook Page" href="#" target="_blank">Gitbook Page</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="Release Page" href="//github.com/hegdeashwin/nodemyadmin/releases" target="_blank">Release Page</a>
+                </li>
+                <li>
+                  <a title="Milestones" href="//github.com/hegdeashwin/nodemyadmin/milestones" target="_blank">Milestones</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="Issues Page" href="//github.com/hegdeashwin/nodemyadmin/issues" target="_blank">Issues Page</a>
+                </li>
+                <li>
+                  <a title="Open Pull Requests" href="//github.com/hegdeashwin/nodemyadmin/pulls" target="_blank">Open Pull Requests</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="About nodemyadmin" href="//github.com/hegdeashwin/nodemyadmin" target="_blank">About nodemyadmin</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> This is application level global error.
+          </div>
+        </div>
+      </div>
+      
+      <header class="sub-header-container">
+        <div class="row">
+          <div class="col-md-9">
+            <ol class="breadcrumb">
+              <li class="active">Projects</li>
+            </ol>
+          </div>
+          <div class="col-md-3">
+            <div class="pull-right">
+              <form class="navbar-form" role="search">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Search Filter"><i class="fa fa-lg fa-filter"></i> <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Search" aria-label="...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" title="Execute Search"><i class="fa fa-lg fa-search"></i></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="super-tab-container">
+        <div class="row">
+          <div class="col-md-12 tab-area">
+            <ul id="super-tab" class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#projectSetup" id="projectSetup-tab" role="tab" data-toggle="tab" aria-controls="projectSetup" aria-expanded="true">Project Setup</a>
+              </li>
+              <li role="presentation">
+                <a href="#projects" role="tab" id="projects-tab" data-toggle="tab" aria-controls="projects" aria-expanded="false">Projects</a>
+              </li>
+              <li role="presentation">
+                <a href="#personalSettings" role="tab" id="personalSettings-tab" data-toggle="tab" aria-controls="personalSettings" aria-expanded="false">Personal Settings</a>
+              </li>
+            </ul>
+            <div id="super-tag-content" class="tab-content">
+              <div role="tabpanel" class="tab-pane fade active in" id="projectSetup" aria-labelledby="projectSetup-tab">
+                <div class="projectSetup-container">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="panel panel-primary projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Choose how you want to clone your repository to create a new project.</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col-md-12">
+                            <div class="media project-container">
+                              <div class="media-left">
+                                <a href="#">
+                                  <i class="fa fa-github fa-4x"></i>
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label for="cloneFromGithub">Clone from Github</label>
+                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                            <hr/>
+                            <div class="media project-container">
+                              <div class="media-left">
+                                <a href="#">
+                                  <i class="fa fa-bitbucket fa-4x"></i>
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label for="cloneFromBitBucket">Clone from BitBucket</label>
+                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                            <hr/>
+                            <div class="media project-container">
+                              <div class="media-left">
+                                <a href="#">
+                                  <i class="fa fa-git fa-4x"></i>
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label for="cloneFromGit">Clone from Git URL</label>
+                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+
+                            <div class="media project-container">
+                              <div class="media-left"></div>
+                              <div class="media-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label for="cloneFromGit">Workspace location</label>
+                                      <input type="text" class="form-control" placeholder="E.g. C:\Workspace">
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+
+                            <div class="media project-container">
+                              <div class="media-left"></div>
+                              <div class="media-body">
+                                <form>
+                                    <div class="form-group">
+                                      <button class="btn btn-success">Add Project</button>
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="panel panel-primary projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Initialize your repository to create a new project.</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="media project-container">
+                            <div class="media-body">
+                              <form>
+                                  <div class="form-group">
+                                    <label for="cloneFromGit">Workspace location</label>
+                                    <input type="text" class="form-control" placeholder="E.g. C:\Workspace">
+                                  </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-primary projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Recent Projects</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="media project-container">
+                            <div class="media-body">
+                              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4>Protocore</h4>
+                                <p>Change this and that and try attis consectetur puruasd asd asd ads sit amet fermentum.</p>
+                                <p>
+                                  <button type="button" class="btn btn-warning">Open</button>
+                                  <button type="button" class="btn btn-danger">Remove</button>
+                                </p>
+                              </div>
+                              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4>Protocore</h4>
+                                <p>Change this and that and try attis consectetur puruasd asd asd ads sit amet fermentum.</p>
+                                <p>
+                                  <button type="button" class="btn btn-warning">Open</button>
+                                  <button type="button" class="btn btn-danger">Remove</button>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="tabpanel" class="tab-pane fade" id="projects" aria-labelledby="projects-tab">
+                <div class="projects-container">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <div class="panel panel-default projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">List of Projects</h3>
+                        </div>
+                        <div class="panel-body">
+
+                          <div class="media project-container">
+                            <div class="media-left">
+                              <a href="#">
+                                <i class="fa fa-github fa-4x"></i>
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <div class="col-md-8">
+                                <h4 class="media-heading"><a href="#">Protocore</a> <a target="_blank" href="//github.com/hegdeashwin/Protocore" title="Visit: github.com/hegdeashwin/Protocore"></a></h4>
+                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Protocore">github.com/hegdeashwin/Protocore</a></p>
+                                <p>Tags:
+                                  <span class="label label-success">HTML</span>
+                                  <span class="label label-success">CSS</span>
+                                  <span class="label label-success">JavaScript</span>
+                                  <span class="label label-success">Python</span>
+                                  <span class="label label-success">PHP</span>
+                                  <span class="label label-success">Ruby</span>
+                                </p>
+                              </div>
+                              <div class="col-md-4">
+                                <p class="pull-right">
+                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
+                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
+                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <hr/>
+                          <div class="media project-container">
+                            <div class="media-left">
+                              <a href="#">
+                                <i class="fa fa-bitbucket fa-4x"></i>
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <div class="col-md-8">
+                                <h4 class="media-heading"><a href="#">Nebula</a> <a target="_blank" href="//github.com/hegdeashwin/Nebula" title="Visit: github.com/hegdeashwin/Nebula"></a></h4>
+                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Nebula">github.com/hegdeashwin/Nebula</a></p>
+                                <p>Tags:
+                                  <span class="label label-success">HTML</span>
+                                  <span class="label label-success">CSS</span>
+                                  <span class="label label-success">JavaScript</span>
+                                  <span class="label label-success">Ruby</span>
+                                </p>
+                              </div>
+                              <div class="col-md-4">
+                                <p class="pull-right">
+                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
+                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
+                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <hr/>
+                          <div class="media project-container">
+                            <div class="media-left">
+                              <a href="#">
+                                <i class="fa fa-git fa-4x"></i>
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <div class="col-md-8">
+                                <h4 class="media-heading"><a href="#">Boneloop</a> <a target="_blank" href="//github.com/hegdeashwin/Boneloop" title="Visit: github.com/hegdeashwin/Boneloop"></a></h4>
+                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Boneloop">github.com/hegdeashwin/Nebula</a></p>
+                                <p>Tags:
+                                  <span class="label label-success">HTML</span>
+                                  <span class="label label-success">CSS</span>
+                                  <span class="label label-success">JavaScript</span>
+                                  <span class="label label-success">Ruby</span>
+                                </p>
+                              </div>
+                              <div class="col-md-4">
+                                <p class="pull-right">
+                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
+                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
+                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-footer">
+                          <nav>
+                            <ul class="pagination">
+                              <li>
+                                <a href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                              </li>
+                              <li class="active"><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li>
+                                <a href="#" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Activities</h3>
+                        </div>
+                        <div class="panel-body">
+                          Panel content
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="tabpanel" class="tab-pane fade" id="personalSettings" aria-labelledby="personalSettings-tab">
+                <div class="personalSettings-container">
+
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="list-group">
+                        <a href="#" class="list-group-item active">Profile</a>
+                        <a href="#" class="list-group-item">Account Settings</a>
+                        <a href="#" class="list-group-item">User Accounts</a>
+                        <a href="#" class="list-group-item">Notifications</a>
+                        <a href="#" class="list-group-item">SSH Keys</a>
+                        <a href="#" class="list-group-item">Security</a>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="btn-group panel-btn-group pull-right" role="group" aria-label="...">
+                            <button type="button" class="btn btn-sm btn-default" title="Setting"><i class="fa fa-lg fa-cog"></i></button>
+                            <button type="button" class="btn btn-sm btn-default" title="Help"><i class="fa fa-lg fa-question-circle"></i></button>
+                            <button type="button" class="btn btn-sm btn-default" title="Minimize"><i class="fa fa-lg fa-minus-circle"></i></button>
+                          </div>
+                          <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                          Panel content
+                        </div>
+                        <div class="panel-footer">Panel footer</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                              Panel content
+                            </div>
+                            <div class="panel-footer">Panel footer</div>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                              Panel content
+                            </div>
+                            <div class="panel-footer">Panel footer</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-inverse">
+              <div class="container">
+                <p class="navbar-text">
+                  Copyright &copy; 2015 <a title="Core Developer" href="//github.com/hegdeashwin" target="_blank">Ashwin Hegde</a> | <a title="Contributors" href="//github.com/hegdeashwin/nodemyadmin/graphs/contributors" target="_blank">Contributions</a>, <a title="The MIT License (MIT)" href="//raw.githubusercontent.com/hegdeashwin/nodemyadmin/master/LICENSE" target="_blank">The MIT License (MIT)</a>
+                </p>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
