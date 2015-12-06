@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="libs/chosen/bootstrap-chosen.css" />
+    <link rel="stylesheet" href="libs/datatables/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="override.css" />
     <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="myprojects.css" />
@@ -73,8 +75,7 @@
                 </li>
               </ul>
             </li>
-          </ul>
-        </div>
+          </ul>        </div>
       </div>
     </nav>
 
@@ -83,11 +84,11 @@
         <div class="col-md-12">
           <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Error!</strong> This is application level global error.
+            <strong>Error!</strong> Global application error!
           </div>
         </div>
       </div>
-      
+
       <header class="sub-header-container">
         <div class="row">
           <div class="col-md-9">
@@ -125,98 +126,30 @@
           <div class="col-md-12 tab-area">
             <ul id="super-tab" class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active">
-                <a href="#projectSetup" id="projectSetup-tab" role="tab" data-toggle="tab" aria-controls="projectSetup" aria-expanded="true">Project Setup</a>
+                <a href="#statistics" id="statistics-tab" role="tab" data-toggle="tab" aria-controls="statistics" aria-expanded="true">Statistics</a>
               </li>
               <li role="presentation">
-                <a href="#projects" role="tab" id="projects-tab" data-toggle="tab" aria-controls="projects" aria-expanded="false">Projects</a>
+                <a href="#databases" role="tab" id="databases-tab" data-toggle="tab" aria-controls="databases" aria-expanded="false">Databases</a>
               </li>
               <li role="presentation">
-                <a href="#personalSettings" role="tab" id="personalSettings-tab" data-toggle="tab" aria-controls="personalSettings" aria-expanded="false">Personal Settings</a>
+                <a href="#userAccounts" role="tab" id="userAccounts-tab" data-toggle="tab" aria-controls="userAccounts" aria-expanded="false">User Accounts</a>
+              </li>
+              <li role="presentation">
+                <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false">Settings</a>
               </li>
             </ul>
             <div id="super-tag-content" class="tab-content">
-              <div role="tabpanel" class="tab-pane fade active in" id="projectSetup" aria-labelledby="projectSetup-tab">
-                <div class="projectSetup-container">
+              <div role="tabpanel" class="tab-pane fade active in" id="statistics" aria-labelledby="statistics-tab">
+                <div class="statistics-container">
 
                   <div class="row">
                     <div class="col-md-6">
                       <div class="panel panel-primary projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Choose how you want to clone your repository to create a new project.</h3>
+                          <h3 class="panel-title">Bar Chart</h3>
                         </div>
                         <div class="panel-body">
-                          <div class="col-md-12">
-                            <div class="media project-container">
-                              <div class="media-left">
-                                <a href="#">
-                                  <i class="fa fa-github fa-4x"></i>
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <form>
-                                    <div class="form-group">
-                                      <label for="cloneFromGithub">Clone from Github</label>
-                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
-                                    </div>
-                                </form>
-                              </div>
-                            </div>
-                            <hr/>
-                            <div class="media project-container">
-                              <div class="media-left">
-                                <a href="#">
-                                  <i class="fa fa-bitbucket fa-4x"></i>
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <form>
-                                    <div class="form-group">
-                                      <label for="cloneFromBitBucket">Clone from BitBucket</label>
-                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
-                                    </div>
-                                </form>
-                              </div>
-                            </div>
-                            <hr/>
-                            <div class="media project-container">
-                              <div class="media-left">
-                                <a href="#">
-                                  <i class="fa fa-git fa-4x"></i>
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <form>
-                                    <div class="form-group">
-                                      <label for="cloneFromGit">Clone from Git URL</label>
-                                      <input type="text" class="form-control" placeholder="E.g. hegdeashwin/alphonso.git">
-                                    </div>
-                                </form>
-                              </div>
-                            </div>
 
-                            <div class="media project-container">
-                              <div class="media-left"></div>
-                              <div class="media-body">
-                                <form>
-                                    <div class="form-group">
-                                      <label for="cloneFromGit">Workspace location</label>
-                                      <input type="text" class="form-control" placeholder="E.g. C:\Workspace">
-                                    </div>
-                                </form>
-                              </div>
-                            </div>
-
-                            <div class="media project-container">
-                              <div class="media-left"></div>
-                              <div class="media-body">
-                                <form>
-                                    <div class="form-group">
-                                      <button class="btn btn-success">Add Project</button>
-                                    </div>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -224,43 +157,12 @@
                     <div class="col-md-6">
                       <div class="panel panel-primary projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Initialize your repository to create a new project.</h3>
+                          <h3 class="panel-title">Pie Chart</h3>
                         </div>
                         <div class="panel-body">
                           <div class="media project-container">
                             <div class="media-body">
-                              <form>
-                                  <div class="form-group">
-                                    <label for="cloneFromGit">Workspace location</label>
-                                    <input type="text" class="form-control" placeholder="E.g. C:\Workspace">
-                                  </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
 
-                      <div class="panel panel-primary projects-container">
-                        <div class="panel-heading">
-                          <h3 class="panel-title">Recent Projects</h3>
-                        </div>
-                        <div class="panel-body">
-                          <div class="media project-container">
-                            <div class="media-body">
-                              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4>Protocore</h4>
-                                <p>Change this and that and try attis consectetur puruasd asd asd ads sit amet fermentum.</p>
-                                <p>
-                                  <button type="button" class="btn btn-warning">Open</button>
-                                  <button type="button" class="btn btn-danger">Remove</button>
-                                </p>
-                              </div>
-                              <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4>Protocore</h4>
-                                <p>Change this and that and try attis consectetur puruasd asd asd ads sit amet fermentum.</p>
-                                <p>
-                                  <button type="button" class="btn btn-warning">Open</button>
-                                  <button type="button" class="btn btn-danger">Remove</button>
-                                </p>
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -270,131 +172,261 @@
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="projects" aria-labelledby="projects-tab">
-                <div class="projects-container">
+              <div role="tabpanel" class="tab-pane fade" id="databases" aria-labelledby="databases-tab">
+                <div class="databases-container">
                   <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-4">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Create a new database</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error!</strong> Panel application error!.
+                          </div>
+                          <form>
+                              <div class="form-group">
+                                <label for="forDatabaseName">Enter the database name</label>
+                                <input type="text" class="form-control" placeholder="E.g. protocore_db">
+                              </div>
+                              <div class="form-group">
+                                <select data-placeholder="Select database collation" class="chosen-select" tabindex="-1">
+                                  <option value=""></option>
+                                  <option value="Western Sahara">Western Sahara</option>
+                                  <option value="Yemen">Yemen</option>
+                                  <option value="Zambia">Zambia</option>
+                                  <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                              </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-8">
                       <div class="panel panel-default projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">List of Projects</h3>
+                          <h3 class="panel-title">List of databases</h3>
                         </div>
                         <div class="panel-body">
-
-                          <div class="media project-container">
-                            <div class="media-left">
-                              <a href="#">
-                                <i class="fa fa-github fa-4x"></i>
-                              </a>
-                            </div>
-                            <div class="media-body">
-                              <div class="col-md-8">
-                                <h4 class="media-heading"><a href="#">Protocore</a> <a target="_blank" href="//github.com/hegdeashwin/Protocore" title="Visit: github.com/hegdeashwin/Protocore"></a></h4>
-                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Protocore">github.com/hegdeashwin/Protocore</a></p>
-                                <p>Tags:
-                                  <span class="label label-success">HTML</span>
-                                  <span class="label label-success">CSS</span>
-                                  <span class="label label-success">JavaScript</span>
-                                  <span class="label label-success">Python</span>
-                                  <span class="label label-success">PHP</span>
-                                  <span class="label label-success">Ruby</span>
-                                </p>
-                              </div>
-                              <div class="col-md-4">
-                                <p class="pull-right">
-                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
-                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
-                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
-                                </p>
-                              </div>
-                            </div>
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error!</strong> Panel application error!
                           </div>
-                          <hr/>
-                          <div class="media project-container">
-                            <div class="media-left">
-                              <a href="#">
-                                <i class="fa fa-bitbucket fa-4x"></i>
-                              </a>
-                            </div>
-                            <div class="media-body">
-                              <div class="col-md-8">
-                                <h4 class="media-heading"><a href="#">Nebula</a> <a target="_blank" href="//github.com/hegdeashwin/Nebula" title="Visit: github.com/hegdeashwin/Nebula"></a></h4>
-                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Nebula">github.com/hegdeashwin/Nebula</a></p>
-                                <p>Tags:
-                                  <span class="label label-success">HTML</span>
-                                  <span class="label label-success">CSS</span>
-                                  <span class="label label-success">JavaScript</span>
-                                  <span class="label label-success">Ruby</span>
-                                </p>
-                              </div>
-                              <div class="col-md-4">
-                                <p class="pull-right">
-                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
-                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
-                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <hr/>
-                          <div class="media project-container">
-                            <div class="media-left">
-                              <a href="#">
-                                <i class="fa fa-git fa-4x"></i>
-                              </a>
-                            </div>
-                            <div class="media-body">
-                              <div class="col-md-8">
-                                <h4 class="media-heading"><a href="#">Boneloop</a> <a target="_blank" href="//github.com/hegdeashwin/Boneloop" title="Visit: github.com/hegdeashwin/Boneloop"></a></h4>
-                                <p>Repository: <a target="_blank" href="//github.com/hegdeashwin/Boneloop">github.com/hegdeashwin/Nebula</a></p>
-                                <p>Tags:
-                                  <span class="label label-success">HTML</span>
-                                  <span class="label label-success">CSS</span>
-                                  <span class="label label-success">JavaScript</span>
-                                  <span class="label label-success">Ruby</span>
-                                </p>
-                              </div>
-                              <div class="col-md-4">
-                                <p class="pull-right">
-                                  <a target="_blank" title="Visit Repository" href="#" class="btn btn-sm btn-default"><i class="fa fa-lg fa-external-link"></i></a>
-                                  <a target="_blank" title="View Project Settings" href="#" class="btn btn-sm btn-primary"><i class="fa fa-lg fa-cogs"></i></a>
-                                  <a title="Delete Project" href="#" class="btn btn-sm btn-danger"><i class="fa fa-lg fa-trash-o"></i></a>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+                          <table id="databasesList" class="display table row-border" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th title="Select all rows"><input type="checkbox" /></th>
+                                    <th>Database Name</th>
+                                    <th>Collation</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Garrett Winters</td>
+                                    <td>Accountant</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Ashton Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Cedric Kelly</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Brielle Williamson</td>
+                                    <td>Integration Specialist</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Herrod Chandler</td>
+                                    <td>Sales Assistant</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Rhona Davidson</td>
+                                    <td>Integration Specialist</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Colleen Hurst</td>
+                                    <td>Javascript Developer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Sonya Frost</td>
+                                    <td>Software Engineer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Jena Gaines</td>
+                                    <td>Office Manager</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Quinn Flynn</td>
+                                    <td>Support Lead</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Charde Marshall</td>
+                                    <td>Regional Director</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Haley Kennedy</td>
+                                    <td>Senior Marketing Designer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Tatyana Fitzpatrick</td>
+                                    <td>Regional Director</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Michael Silva</td>
+                                    <td>Marketing Designer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Paul Byrd</td>
+                                    <td>Chief Financial Officer (CFO)</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Gloria Little</td>
+                                    <td>Systems Administrator</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Bradley Greer</td>
+                                    <td>Software Engineer</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Dai Rios</td>
+                                    <td>Personnel Lead</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Jenette Caldwell</td>
+                                    <td>Development Lead</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Yuri Berry</td>
+                                    <td>Chief Marketing Officer (CMO)</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                          </table>
                         </div>
                         <div class="panel-footer">
-                          <nav>
-                            <ul class="pagination">
-                              <li>
-                                <a href="#" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                </a>
-                              </li>
-                              <li class="active"><a href="#">1</a></li>
-                              <li><a href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">4</a></li>
-                              <li><a href="#">5</a></li>
-                              <li>
-                                <a href="#" aria-label="Next">
-                                  <span aria-hidden="true">&raquo;</span>
-                                </a>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-                      </div>
-                    </div>
 
-
-                    <div class="col-md-3">
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h3 class="panel-title">Activities</h3>
-                        </div>
-                        <div class="panel-body">
-                          Panel content
                         </div>
                       </div>
                     </div>
@@ -402,8 +434,307 @@
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="personalSettings" aria-labelledby="personalSettings-tab">
-                <div class="personalSettings-container">
+              <div role="tabpanel" class="tab-pane fade" id="userAccounts" aria-labelledby="userAccounts-tab">
+                <div class="userAccounts-container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">List of database users</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error!</strong> Panel application error!
+                          </div>
+                          <table id="usersList" class="display table row-border" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th title="Select all rows"><input type="checkbox" /></th>
+                                    <th>Username</th>
+                                    <th>Hostname</th>
+                                    <th>Type</th>
+                                    <th>Privileges</th>
+                                    <th>Grant</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Garrett Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Ashton Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Cedric Kelly</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Brielle Williamson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Herrod Chandler</td>
+                                    <td>Sales Assistant</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Rhona Davidson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Colleen Hurst</td>
+                                    <td>Javascript Developer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Sonya Frost</td>
+                                    <td>Software Engineer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Jena Gaines</td>
+                                    <td>Office Manager</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Quinn Flynn</td>
+                                    <td>Support Lead</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Charde Marshall</td>
+                                    <td>Regional Director</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Haley Kennedy</td>
+                                    <td>Senior Marketing Designer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Tatyana Fitzpatrick</td>
+                                    <td>Regional Director</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Michael Silva</td>
+                                    <td>Marketing Designer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Paul Byrd</td>
+                                    <td>Chief Financial Officer (CFO)</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Gloria Little</td>
+                                    <td>Systems Administrator</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Bradley Greer</td>
+                                    <td>Software Engineer</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Dai Rios</td>
+                                    <td>Personnel Lead</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Jenette Caldwell</td>
+                                    <td>Development Lead</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td title="Select current row"><input type="checkbox" /></td>
+                                    <td>Yuri Berry</td>
+                                    <td>Chief Marketing Officer (CMO)</td>
+                                    <td>Global</td>
+                                    <td>All Privileges</td>
+                                    <td>Yes</td>
+                                    <td class="text-center">
+                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="tabpanel" class="tab-pane fade" id="settings" aria-labelledby="settings-tab">
+                <div class="settings-container">
 
                   <div class="row">
                     <div class="col-md-3">
@@ -482,5 +813,9 @@
 
     <script src="libs/jquery.min.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/chosen/chosen.jquery.min.js"></script>
+    <script src="libs/datatables/dataTables.min.js"></script>
+    <script src="libs/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
