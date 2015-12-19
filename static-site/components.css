@@ -1,0 +1,103 @@
+.project-container .media-left {
+  text-align: center;
+  min-width: 70px;
+}
+
+.projects-container .pagination {
+  margin: 0px;
+}
+
+
+/* Breadcrumb */
+.breadcrumb-arrow {
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    list-style: none;
+    background-color: #e6e9ed;
+}
+.breadcrumb-arrow li:first-child a {
+    border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+}
+.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb-arrow li:not(:first-child) {
+    margin-left: -5px;
+}
+.breadcrumb-arrow li+li:before {
+    padding: 0;
+    content: "";
+}
+.breadcrumb-arrow li span {
+    padding: 0 10px;
+}
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+    height: 36px;
+    padding: 0 10px 0 25px;
+    line-height: 36px;
+}
+.breadcrumb-arrow li:first-child a {
+    padding: 0 10px;
+}
+.breadcrumb-arrow li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+}
+.breadcrumb-arrow li:first-child a {
+    padding-left: 10px;
+}
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+.breadcrumb-arrow li a:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: #337ab7;
+    border-left-style: solid;
+    border-left-width: 11px;
+}
+.breadcrumb-arrow li a:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #337ab7;
+}
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+}
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
+    border-left-color: #337ab7;
+}
+.breadcrumb-arrow li a:active {
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+}
+.breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before {
+    border-left-color: #337ab7;
+}
+.breadcrumb-arrow li span {
+    color: #434a54;
+}
+
+/* Editor */
+#editor {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

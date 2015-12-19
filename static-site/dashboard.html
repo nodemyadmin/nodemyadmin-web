@@ -35,6 +35,9 @@
                 <li>
                   <a title="Take a Tour" href="#">Take a Tour</a>
                 </li>
+                <li>
+                  <a title="What's New" href="#">What's New</a>
+                </li>
                 <li class="divider"></li>
                 <li>
                   <a title="API Explorer" href="#" target="_blank">API Explorer</a>
@@ -84,8 +87,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Error!</strong> This is application level global error.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times-circle-o"></i></button>
+            <strong><i class="fa fa-lg fa-exclamation-triangle"></i> Error!</strong> Global application error!
           </div>
         </div>
       </div>
@@ -93,9 +96,9 @@
       <header class="sub-header-container">
         <div class="row">
           <div class="col-md-9">
-            <ol class="breadcrumb">
-              <li><a href="#">Dashboard</a></li>
-              <li class="active">Statistics</li>
+            <ol class="breadcrumb breadcrumb-arrow">
+              <li><a href="#">My Projects</a></li>
+              <li class="active"><span>Dashboard</span></li>
             </ol>
           </div>
           <div class="col-md-3">
@@ -128,30 +131,30 @@
           <div class="col-md-12 tab-area">
             <ul id="super-tab" class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active">
-                <a href="#statistics" id="statistics-tab" role="tab" data-toggle="tab" aria-controls="statistics" aria-expanded="true">Statistics</a>
+                <a href="#table" id="table-tab" role="tab" data-toggle="tab" aria-controls="table" aria-expanded="true">Table</a>
               </li>
               <li role="presentation">
-                <a href="#database" role="tab" id="database-tab" data-toggle="tab" aria-controls="database" aria-expanded="false">Database</a>
+                <a href="#directSQL" role="tab" id="directSQL-tab" data-toggle="tab" aria-controls="directSQL" aria-expanded="false">Direct SQL</a>
               </li>
               <li role="presentation">
-                <a href="#find" role="tab" id="find-tab" data-toggle="tab" aria-controls="find" aria-expanded="false">Find</a>
+                <a href="#dataModeling" role="tab" id="dataModeling-tab" data-toggle="tab" aria-controls="dataModeling" aria-expanded="false">Data Modeling</a>
               </li>
               <li role="presentation">
-                <a href="#backup" role="tab" id="backup-tab" data-toggle="tab" aria-controls="backup" aria-expanded="false">Backup</a>
+                <a href="#search" role="tab" id="search-tab" data-toggle="tab" aria-controls="search" aria-expanded="false">Search</a>
               </li>
               <li role="presentation">
-                <a href="#deployment" role="tab" id="deployment-tab" data-toggle="tab" aria-controls="deployment" aria-expanded="false">Deployment</a>
+                <a href="#import" role="tab" id="import-tab" data-toggle="tab" aria-controls="import" aria-expanded="false">Import</a>
               </li>
               <li role="presentation">
-                <a href="#api" role="tab" id="api-tab" data-toggle="tab" aria-controls="api" aria-expanded="false">API</a>
+                <a href="#export" role="tab" id="export-tab" data-toggle="tab" aria-controls="export" aria-expanded="false">Export</a>
               </li>
               <li role="presentation">
                 <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false">Settings</a>
               </li>
             </ul>
             <div id="super-tag-content" class="tab-content">
-              <div role="tabpanel" class="tab-pane fade active in" id="statistics" aria-labelledby="statistics-tab">
-                <div class="statistics-container">
+              <div role="tabpanel" class="tab-pane fade active in" id="table" aria-labelledby="table-tab">
+                <div class="table-container">
 
                   <div class="row">
                     <div class="col-md-9">
@@ -448,33 +451,39 @@
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="database" aria-labelledby="database-tab">
-                <div class="database-container">
-                  <h2>Database</h2>
+              <div role="tabpanel" class="tab-pane fade" id="directSQL" aria-labelledby="directSQL-tab">
+                <div class="directSQL-container">
+                  <h2>Direct SQL</h2>
+
+                  <!-- <div class="col-md-12"> -->
+                    <div id="editor">
+
+                    </div>
+                  <!-- </div> -->
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="find" aria-labelledby="find-tab">
-                <div class="find-container">
-                  <h2>Find</h2>
+              <div role="tabpanel" class="tab-pane fade" id="dataModeling" aria-labelledby="dataModeling-tab">
+                <div class="dataModeling-container">
+                  <h2>Data Modeling</h2>
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="backup" aria-labelledby="backup-tab">
-                <div class="backup-container">
-                  <h2>Backup</h2>
+              <div role="tabpanel" class="tab-pane fade" id="search" aria-labelledby="search-tab">
+                <div class="search-container">
+                  <h2>Search</h2>
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="deployment" aria-labelledby="deployment-tab">
-                <div class="deployment-container">
-                  <h2>Deployment</h2>
+              <div role="tabpanel" class="tab-pane fade" id="import" aria-labelledby="import-tab">
+                <div class="import-container">
+                  <h2>Import</h2>
                 </div>
               </div>
 
-              <div role="tabpanel" class="tab-pane fade" id="api" aria-labelledby="api-tab">
-                <div class="api-container">
-                  <h2>API</h2>
+              <div role="tabpanel" class="tab-pane fade" id="export" aria-labelledby="export-tab">
+                <div class="export-container">
+                  <h2>Export</h2>
                 </div>
               </div>
 
@@ -562,6 +571,7 @@
     <script src="libs/chosen/chosen.jquery.min.js"></script>
     <script src="libs/datatables/dataTables.min.js"></script>
     <script src="libs/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="libs/ace/src-min/ace.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
