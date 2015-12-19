@@ -1,0 +1,62 @@
+.github {
+  color: #000000;
+}
+
+.stackoverflow {
+  color: #F48024;
+}
+
+.linkedin {
+  color: #0077B5;
+}
+
+.facebook {
+  color: #4862A3;
+}
+
+.googleplus {
+  color: #E92C34;
+}
+
+.youtube {
+  color: #C1181D;
+}
+
+.twitter {
+  color: #55ACEE;
+}
+
+.tumble {
+  color: #34465D;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: #4A4649;
+}
+
+.panel-btn-group {
+  margin: -6px 0px 0 5px;
+}
+
+.breadcrumb {
+    font-size: 16px;
+}
+
+footer .navbar {
+  border: 0px;
+  box-shadow: none;
+  background-image: none;
+}
+
+footer .navbar-text.navbar-right:last-child {
+  margin-right: 45px;
+}
+
+footer .navbar-inverse .navbar-text, footer .navbar-inverse .navbar-text a, footer .navbar-inverse .navbar-text a:hover {
+  color: #ffffff;
+}
+
+// Datatables Custom Toolbar
+.dttoolbar {
+    float: left;
+}

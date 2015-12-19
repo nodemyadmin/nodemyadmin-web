@@ -35,6 +35,9 @@
                 <li>
                   <a title="Take a Tour" href="#">Take a Tour</a>
                 </li>
+                <li>
+                  <a title="What's New" href="#">What's New</a>
+                </li>
                 <li class="divider"></li>
                 <li>
                   <a title="API Explorer" href="#" target="_blank">API Explorer</a>
@@ -83,8 +86,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Error!</strong> Global application error!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times-circle-o"></i></button>
+            <strong><i class="fa fa-lg fa-exclamation-triangle"></i> Error!</strong> Global application error!
           </div>
         </div>
       </div>
@@ -92,8 +95,9 @@
       <header class="sub-header-container">
         <div class="row">
           <div class="col-md-9">
-            <ol class="breadcrumb">
-              <li class="active">Projects</li>
+            <ol class="breadcrumb breadcrumb-arrow">
+              <li><a href="#">Home</a></li>
+              <li class="active"><span>Summary</span></li>
             </ol>
           </div>
           <div class="col-md-3">
@@ -126,27 +130,27 @@
           <div class="col-md-12 tab-area">
             <ul id="super-tab" class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active">
-                <a href="#statistics" id="statistics-tab" role="tab" data-toggle="tab" aria-controls="statistics" aria-expanded="true">Statistics</a>
+                <a href="#summary" id="summary-tab" role="tab" data-toggle="tab" aria-controls="summary" aria-expanded="true"><i class="fa fa-server"></i> Summary</a>
               </li>
               <li role="presentation">
-                <a href="#databases" role="tab" id="databases-tab" data-toggle="tab" aria-controls="databases" aria-expanded="false">Databases</a>
+                <a href="#databases" role="tab" id="databases-tab" data-toggle="tab" aria-controls="databases" aria-expanded="false"><i class="fa fa-database"></i> Databases</a>
               </li>
               <li role="presentation">
-                <a href="#userAccounts" role="tab" id="userAccounts-tab" data-toggle="tab" aria-controls="userAccounts" aria-expanded="false">User Accounts</a>
+                <a href="#userAccounts" role="tab" id="userAccounts-tab" data-toggle="tab" aria-controls="userAccounts" aria-expanded="false"><i class="fa fa-users"></i> User Accounts</a>
               </li>
               <li role="presentation">
-                <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false">Settings</a>
+                <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false"><i class="fa fa-cogs"></i> Settings</a>
               </li>
             </ul>
             <div id="super-tag-content" class="tab-content">
-              <div role="tabpanel" class="tab-pane fade active in" id="statistics" aria-labelledby="statistics-tab">
+              <div role="tabpanel" class="tab-pane fade active in" id="summary" aria-labelledby="statistics-tab">
                 <div class="statistics-container">
 
                   <div class="row">
                     <div class="col-md-6">
                       <div class="panel panel-primary projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Bar Chart</h3>
+                          <h3 class="panel-title"><i class="fa fa-bar-chart"></i> Bar Chart</h3>
                         </div>
                         <div class="panel-body">
 
@@ -157,7 +161,7 @@
                     <div class="col-md-6">
                       <div class="panel panel-primary projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Pie Chart</h3>
+                          <h3 class="panel-title"><i class="fa fa-pie-chart"></i> Pie Chart</h3>
                         </div>
                         <div class="panel-body">
                           <div class="media project-container">
@@ -169,6 +173,30 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="panel panel-primary projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"><i class="fa fa-line-chart"></i> Line Chart</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="panel panel-primary projects-container">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"><i class="fa fa-area-chart"></i> Area Chart</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -178,7 +206,7 @@
                     <div class="col-md-4">
                       <div class="panel panel-primary">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Create a new database</h3>
+                          <h3 class="panel-title"><i class="fa fa-plus-circle"></i> Create a new database</h3>
                         </div>
                         <div class="panel-body">
                           <div class="alert alert-danger alert-dismissible" role="alert">
@@ -207,11 +235,11 @@
                     <div class="col-md-8">
                       <div class="panel panel-default projects-container">
                         <div class="panel-heading">
-                          <h3 class="panel-title">List of databases</h3>
+                          <h3 class="panel-title"><i class="fa fa-th-list"></i> List of databases</h3>
                         </div>
                         <div class="panel-body">
                           <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times-circle-o"></i></button>
                             <strong>Error!</strong> Panel application error!
                           </div>
                           <table id="databasesList" class="display table row-border" cellspacing="0" width="100%">
@@ -229,7 +257,8 @@
                                     <td>Tiger Nixon</td>
                                     <td>System Architect</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -238,7 +267,8 @@
                                     <td>Garrett Winters</td>
                                     <td>Accountant</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -247,7 +277,8 @@
                                     <td>Ashton Cox</td>
                                     <td>Junior Technical Author</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -256,7 +287,8 @@
                                     <td>Cedric Kelly</td>
                                     <td>Senior Javascript Developer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -265,7 +297,8 @@
                                     <td>Airi Satou</td>
                                     <td>Accountant</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -274,7 +307,8 @@
                                     <td>Brielle Williamson</td>
                                     <td>Integration Specialist</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -283,7 +317,8 @@
                                     <td>Herrod Chandler</td>
                                     <td>Sales Assistant</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -292,7 +327,8 @@
                                     <td>Rhona Davidson</td>
                                     <td>Integration Specialist</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -301,7 +337,8 @@
                                     <td>Colleen Hurst</td>
                                     <td>Javascript Developer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -310,7 +347,8 @@
                                     <td>Sonya Frost</td>
                                     <td>Software Engineer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -319,7 +357,8 @@
                                     <td>Jena Gaines</td>
                                     <td>Office Manager</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -328,7 +367,8 @@
                                     <td>Quinn Flynn</td>
                                     <td>Support Lead</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -337,7 +377,8 @@
                                     <td>Charde Marshall</td>
                                     <td>Regional Director</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -346,7 +387,8 @@
                                     <td>Haley Kennedy</td>
                                     <td>Senior Marketing Designer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -355,7 +397,8 @@
                                     <td>Tatyana Fitzpatrick</td>
                                     <td>Regional Director</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -364,7 +407,8 @@
                                     <td>Michael Silva</td>
                                     <td>Marketing Designer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -373,7 +417,8 @@
                                     <td>Paul Byrd</td>
                                     <td>Chief Financial Officer (CFO)</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -382,7 +427,8 @@
                                     <td>Gloria Little</td>
                                     <td>Systems Administrator</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -391,7 +437,8 @@
                                     <td>Bradley Greer</td>
                                     <td>Software Engineer</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -400,7 +447,8 @@
                                     <td>Dai Rios</td>
                                     <td>Personnel Lead</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -409,7 +457,8 @@
                                     <td>Jenette Caldwell</td>
                                     <td>Development Lead</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -418,7 +467,8 @@
                                     <td>Yuri Berry</td>
                                     <td>Chief Marketing Officer (CMO)</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Use database"><i class="fa fa-lg fa-pencil-square"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Check Privileges"><i class="fa fa-lg fa-user"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -440,11 +490,11 @@
                     <div class="col-md-12">
                       <div class="panel panel-default">
                         <div class="panel-heading">
-                          <h3 class="panel-title">List of database users</h3>
+                          <h3 class="panel-title"><i class="fa fa-th-list"></i> List of database users</h3>
                         </div>
                         <div class="panel-body">
                           <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times-circle-o"></i></button>
                             <strong>Error!</strong> Panel application error!
                           </div>
                           <table id="usersList" class="display table row-border" cellspacing="0" width="100%">
@@ -468,7 +518,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -480,7 +530,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -492,7 +542,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -504,7 +554,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -516,7 +566,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -528,7 +578,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -540,7 +590,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -552,7 +602,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -564,7 +614,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -576,7 +626,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -588,7 +638,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -600,7 +650,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -612,7 +662,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -624,7 +674,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -636,7 +686,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -648,7 +698,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -660,7 +710,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -672,7 +722,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -684,7 +734,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -696,7 +746,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -708,7 +758,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -720,7 +770,7 @@
                                     <td>All Privileges</td>
                                     <td>Yes</td>
                                     <td class="text-center">
-                                      <button class="btn btn-xs btn-success" title="Check Privileges"><i class="fa fa-lg fa-user-secret"></i></button>
+                                      <button class="btn btn-xs btn-default" title="Edit User"><i class="fa fa-lg fa-pencil-square"></i></button>
                                       <button class="btn btn-xs btn-danger" title="Drop Database"><i class="fa fa-lg fa-trash-o"></i></button>
                                     </td>
                                 </tr>
@@ -802,7 +852,7 @@
             <nav class="navbar navbar-inverse">
               <div class="container">
                 <p class="navbar-text">
-                  Copyright &copy; 2015 <a title="Core Developer" href="//github.com/hegdeashwin" target="_blank">Ashwin Hegde</a> | <a title="Contributors" href="//github.com/hegdeashwin/nodemyadmin/graphs/contributors" target="_blank">Contributions</a>, <a title="The MIT License (MIT)" href="//raw.githubusercontent.com/hegdeashwin/nodemyadmin/master/LICENSE" target="_blank">The MIT License (MIT)</a>
+                  Copyright &copy; 2016 <a title="Core Developer" href="//github.com/hegdeashwin" target="_blank">Ashwin Hegde</a> | <a title="Contributors" href="//github.com/hegdeashwin/nodemyadmin/graphs/contributors" target="_blank">Contributions</a>, <a title="The MIT License (MIT)" href="//raw.githubusercontent.com/hegdeashwin/nodemyadmin/master/LICENSE" target="_blank">The MIT License (MIT)</a>
                 </p>
               </div>
             </nav>

@@ -1,0 +1,15 @@
+body {
+  padding-top: 30px;
+}
+
+.signin-container .panel-primary {
+  border-color: #eeeeee;
+}
+
+.signin-container .thumbnail {
+  -mox-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  border: none;
+}
