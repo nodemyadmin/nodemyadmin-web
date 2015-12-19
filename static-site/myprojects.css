@@ -1,0 +1,18 @@
+.sub-header-container .navbar-form {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.super-tab-container .nav-tabs>li>a {
+  margin-right: 0px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sub-header-container .navbar-form {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+  }
+}
