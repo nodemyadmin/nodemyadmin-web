@@ -131,25 +131,22 @@
           <div class="col-md-12 tab-area">
             <ul id="super-tab" class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active">
-                <a href="#table" id="table-tab" role="tab" data-toggle="tab" aria-controls="table" aria-expanded="true">Table</a>
+                <a href="#table" id="table-tab" role="tab" data-toggle="tab" aria-controls="table" aria-expanded="true"><i class="fa fa-table"></i> Table</a>
               </li>
               <li role="presentation">
-                <a href="#directSQL" role="tab" id="directSQL-tab" data-toggle="tab" aria-controls="directSQL" aria-expanded="false">Direct SQL</a>
+                <a href="#directSQL" role="tab" id="directSQL-tab" data-toggle="tab" aria-controls="directSQL" aria-expanded="false"><i class="fa fa-terminal"></i> Direct SQL</a>
               </li>
               <li role="presentation">
-                <a href="#dataModeling" role="tab" id="dataModeling-tab" data-toggle="tab" aria-controls="dataModeling" aria-expanded="false">Data Modeling</a>
+                <a href="#dataModeling" role="tab" id="dataModeling-tab" data-toggle="tab" aria-controls="dataModeling" aria-expanded="false"><i class="fa fa-map-signs"></i> Data Modeling</a>
               </li>
               <li role="presentation">
-                <a href="#search" role="tab" id="search-tab" data-toggle="tab" aria-controls="search" aria-expanded="false">Search</a>
+                <a href="#import" role="tab" id="import-tab" data-toggle="tab" aria-controls="import" aria-expanded="false"><i class="fa fa-compress"></i> Import</a>
               </li>
               <li role="presentation">
-                <a href="#import" role="tab" id="import-tab" data-toggle="tab" aria-controls="import" aria-expanded="false">Import</a>
+                <a href="#export" role="tab" id="export-tab" data-toggle="tab" aria-controls="export" aria-expanded="false"><i class="fa fa-expand"></i> Export</a>
               </li>
               <li role="presentation">
-                <a href="#export" role="tab" id="export-tab" data-toggle="tab" aria-controls="export" aria-expanded="false">Export</a>
-              </li>
-              <li role="presentation">
-                <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false">Settings</a>
+                <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings" aria-expanded="false"><i class="fa fa-cog"></i> Settings</a>
               </li>
             </ul>
             <div id="super-tag-content" class="tab-content">
@@ -453,25 +450,25 @@
 
               <div role="tabpanel" class="tab-pane fade" id="directSQL" aria-labelledby="directSQL-tab">
                 <div class="directSQL-container">
-                  <h2>Direct SQL</h2>
+                  <div class="col-md-12">
+                    <div class="editor-toolbar">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-sm">Run SQL</button>
+                      </div>
 
-                  <!-- <div class="col-md-12"> -->
-                    <div id="editor">
-
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default btn-sm">Format</button>
+                        <button type="button" class="btn btn-default btn-sm">Clean</button>
+                      </div>
                     </div>
-                  <!-- </div> -->
+                    <div id="editor"></div>
+                  </div>
                 </div>
               </div>
 
               <div role="tabpanel" class="tab-pane fade" id="dataModeling" aria-labelledby="dataModeling-tab">
                 <div class="dataModeling-container">
                   <h2>Data Modeling</h2>
-                </div>
-              </div>
-
-              <div role="tabpanel" class="tab-pane fade" id="search" aria-labelledby="search-tab">
-                <div class="search-container">
-                  <h2>Search</h2>
                 </div>
               </div>
 
@@ -572,6 +569,8 @@
     <script src="libs/datatables/dataTables.min.js"></script>
     <script src="libs/datatables/dataTables.bootstrap.min.js"></script>
     <script src="libs/ace/src-min/ace.js"></script>
+    <script src="libs/ace/src-min/mode-mysql.js" type="text/javascript" charset="utf-8"></script>
+    <script src="libs/ace/src-min/snippets/mysql.js" type="text/javascript" charset="utf-8"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
