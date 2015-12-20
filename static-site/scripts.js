@@ -37,4 +37,9 @@
     });
   });
 
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/github");
+  var sqlMode = editor.require("ace/mode/javascript").Mode;
+  editor.session.setMode(new sqlMode());
+
 })();

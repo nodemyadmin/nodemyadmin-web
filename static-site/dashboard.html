@@ -450,13 +450,19 @@
 
               <div role="tabpanel" class="tab-pane fade" id="directSQL" aria-labelledby="directSQL-tab">
                 <div class="directSQL-container">
-                  <h2>Direct SQL</h2>
+                  <div class="col-md-12">
+                    <div class="editor-toolbar">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-sm">Run SQL</button>
+                      </div>
 
-                  <!-- <div class="col-md-12"> -->
-                    <div id="editor">
-
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default btn-sm">Format</button>
+                        <button type="button" class="btn btn-default btn-sm">Clean</button>
+                      </div>
                     </div>
-                  <!-- </div> -->
+                    <div id="editor"></div>
+                  </div>
                 </div>
               </div>
 
@@ -563,6 +569,7 @@
     <script src="libs/datatables/dataTables.min.js"></script>
     <script src="libs/datatables/dataTables.bootstrap.min.js"></script>
     <script src="libs/ace/src-min/ace.js"></script>
+    <script src="libs/ace/src/mode-mysql.js" type="text/javascript" charset="utf-8"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
