@@ -34,6 +34,7 @@
     "hapi": "^10.0.0",
     "joi": "^6.5.0",
     "jquery": "^2.1.4",
+    "jsonwebtoken": "^5.4.1",
     "mysql": "^2.7.0"
   },
   "devDependencies": {
