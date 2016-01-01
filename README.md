@@ -7,9 +7,9 @@ nodemyadmin is written using below technology stacks:
 Server: Server side JavaScript (Node.js)
 * Hapi, Joi, MySQL, Good, Good-console, Mocha+Chai+Expect etc.
 
-Client: Client side JavaScript 
+Client: Client side JavaScript
 * Angular.js, Twitter Bootstrap 3^, Jasmine etc.
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Ashwin Hegde
+Copyright (c) 2016 Ashwin Hegde
