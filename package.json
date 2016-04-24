@@ -9,6 +9,9 @@
       "email": "ashwin.hegde3@gmail.com"
     }
   ],
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "http://github.com/hegdeashwin/nodemyadmin"
@@ -29,6 +32,8 @@
     "angular": "^1.4.5",
     "angular-storage": "0.0.13",
     "angular-ui-router": "^0.2.15",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.1",
     "good": "^6.2.0",
     "good-console": "^5.0.2",
     "hapi": "^10.0.0",
@@ -39,28 +44,7 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.4.5",
-    "browserify": "^11.0.1",
-    "browserify-shim": "^3.8.10",
-    "grunt": "~0.4.4",
-    "grunt-browserify": "^4.0.0",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-copy": "^0.8.1",
-    "grunt-contrib-csslint": "~0.5.0",
-    "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-jshint": "~0.11.0",
-    "grunt-contrib-less": "~1.0.0",
-    "grunt-contrib-uglify": "^0.9.2",
-    "grunt-contrib-watch": "~0.6.0",
-    "grunt-htmlhint": "~0.4.0",
-    "grunt-jscs": "~2.1.0",
-    "grunt-jsonlint": "^1.0.4",
-    "grunt-karma": "^0.12.0",
-    "karma": "^0.13.9",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-coverage": "^0.5.1",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-mocha": "^0.2.0"
+    "webpack": "^1.13.0"
   },
   "keywords": [
     "mysqladmin",
@@ -68,7 +52,7 @@
     "nodemysql"
   ],
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4.2.3"
   },
   "licenses": [
     {
