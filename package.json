@@ -10,7 +10,9 @@
     }
   ],
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
