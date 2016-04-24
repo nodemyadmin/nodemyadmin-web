@@ -4,11 +4,11 @@
 	module.exports = {
 		"server": {
 			"host": "localhost",
-			"port": 3000,
+			"port": 9000,
 			"address": "localhost"
 		},
 		"client": {
-			"staticServe": "client-prod",
+			"staticServe": "dist",
 			"listing": true,
 			"index": true,
 			"showHidden": true
