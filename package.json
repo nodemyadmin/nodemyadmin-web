@@ -31,10 +31,10 @@
     "url": "http://github.com/hegdeashwin/nodemyadmin/wiki"
   },
   "dependencies": {
-    "angular": "^1.4.5",
-    "angular-storage": "0.0.13",
-    "angular-ui-router": "^0.2.15",
+    "angular-ui-router": "^1.0.0-alpha.4",
+    "angular2": "^2.0.0-beta.15",
     "bootstrap": "^3.3.6",
+    "es6-shim": "^0.35.0",
     "font-awesome": "^4.6.1",
     "good": "^6.2.0",
     "good-console": "^5.0.2",
@@ -42,10 +42,15 @@
     "joi": "^6.5.0",
     "jquery": "^2.1.4",
     "jsonwebtoken": "^5.4.1",
-    "mysql": "^2.7.0"
+    "mysql": "^2.7.0",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "zone.js": "^0.6.12"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
     "webpack": "^1.13.0"
   },
   "keywords": [
