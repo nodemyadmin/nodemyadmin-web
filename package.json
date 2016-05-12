@@ -32,8 +32,9 @@
   },
   "dependencies": {
     "angular-ui-router": "^1.0.0-alpha.4",
-    "angular2": "^2.0.0-beta.15",
+    "angular2": "^2.0.0-beta.17",
     "bootstrap": "^3.3.6",
+    "es6-promise": "^3.2.1",
     "es6-shim": "^0.35.0",
     "font-awesome": "^4.6.1",
     "good": "^6.2.0",
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.4.5",
+    "html-webpack-plugin": "^2.16.1",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
     "webpack": "^1.13.0"
