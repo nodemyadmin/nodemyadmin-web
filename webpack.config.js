@@ -3,15 +3,11 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
-  entry: './src/nodemyadmin.ts',
+  entry: './src/nodemyadmin.js',
 
   output: {
     path: './dist/',
     filename: 'nodemyadmin.min.js'
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.ts', '.tsx']
   },
 
   plugins: [new HtmlWebpackPlugin({
@@ -20,8 +16,12 @@ var config = {
 
   module: {
     loaders: [{
-      test: /\.tsx?$/,
-      loader: 'ts-loader'
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'angular2']
+      }
     }, {
       test: /\.(jpg|jpeg|png|gif|svg)$/i,
       loader: 'file'
