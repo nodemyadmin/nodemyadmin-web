@@ -16,6 +16,13 @@ var config = {
 
   module: {
     loaders: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'angular2']
+      }
+    }, {
       test: /\.(jpg|jpeg|png|gif|svg)$/i,
       loader: 'file'
     }, {
