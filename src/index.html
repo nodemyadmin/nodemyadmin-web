@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="nodemyadmin">
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,13 +7,8 @@
 </head>
 <body>
 
-	<my-app>Loading...</my-app>
-
-	<script src="../node_modules/es6-shim/es6-shim.min.js"></script>
-  <script src="../node_modules/zone.js/dist/zone.js"></script>
-  <script src="../node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="../node_modules/rxjs/bundles/Rx.umd.js"></script>
-
+	<div ui-view></div>
+	
 	<script type="text/javascript" src="nodemyadmin.min.js"></script>
 </body>
 </html>
