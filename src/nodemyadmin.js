@@ -8,6 +8,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import PageNotFound from './app/Errors/PageNotFound.html';
+import PageNotFoundCharacter from './assets/imgs/page-not-found.png';
+import './app/Errors/PageNotFound.less';
 
 let nodemyadmin = angular.module('nodemyadmin', [uiRouter]);
 
@@ -42,6 +44,9 @@ nodemyadmin.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('pagenotfound', {
       url: '/pagenotfound',
-      templateUrl: 'PageNotFound'
+      templateUrl: 'PageNotFound',
+      controller: function($scope) {
+        $scope.PageNotFoundCharacter = PageNotFoundCharacter;
+      }
     });
 });
