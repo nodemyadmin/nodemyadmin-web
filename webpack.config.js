@@ -1,6 +1,7 @@
 'use strict';
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 var config = {
   entry: './src/nodemyadmin.js',
@@ -10,9 +11,11 @@ var config = {
     filename: 'nodemyadmin.min.js'
   },
 
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ],
 
   module: {
     loaders: [{
@@ -25,6 +28,12 @@ var config = {
     }, {
       test: /\.(jpg|jpeg|png|gif|svg)$/i,
       loader: 'file'
+    }, {
+      test: /\.(html)$/i,
+      loader: 'file?name=[name].[ext]',
+      include: [
+        path.resolve(__dirname, 'src', 'app')
+      ]
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file"
