@@ -1,6 +1,5 @@
-/**
- * List of 3rd party npms requires.
- */
+'use strict';
+
 import Hapi from 'hapi';
 import mysql from 'mysql';
 import Joi from 'joi';
