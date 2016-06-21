@@ -3,12 +3,12 @@ module.exports = function(connection, Joi) {
 	'use strict';
 
 	return {
-		databases: function() {
+		databases: () => {
 			return [{
 				method: 'GET',
 				path: '/api/v1/databases/show',
-				handler: function(request, reply) {
-					connection.query('SHOW DATABASES', function(error, rows) {
+				handler: (request, reply) => {
+					connection.query('SHOW DATABASES', (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -19,10 +19,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'POST',
 				path: '/api/v1/database/use',
-				handler: function(request, reply) {
-					var dbName = request.payload.dbName;
+				handler: (request, reply) => {
+					let dbName = request.payload.dbName;
 
-					connection.query('USE ' + dbName, function(error, rows) {
+					connection.query('USE ' + dbName, (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -40,10 +40,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'POST',
 				path: '/api/v1/database/create',
-				handler: function(request, reply) {
-					var dbName = request.payload.dbName;
+				handler: (request, reply) => {
+					let dbName = request.payload.dbName;
 
-					connection.query('CREATE DATABASE ' + dbName, function(error, rows) {
+					connection.query('CREATE DATABASE ' + dbName, (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -61,10 +61,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'DELETE',
 				path: '/api/v1/database/drop',
-				handler: function(request, reply) {
-					var dbName = request.payload.dbName;
+				handler: (request, reply) => {
+					let dbName = request.payload.dbName;
 
-					connection.query('DROP DATABASE IF EXISTS ' + dbName, function(error, rows) {
+					connection.query('DROP DATABASE IF EXISTS ' + dbName, (error, rows) => {
 						if (error) {
 							throw error;
 						}
