@@ -3,12 +3,12 @@ module.exports = function(connection, Joi) {
 	'use strict';
 
 	return {
-		tables: function() {
+		tables: () => {
 			return [{
 				method: 'GET',
 				path: '/api/v1/tables/show',
-				handler: function(request, reply) {
-					connection.query('show tables', function(error, rows) {
+				handler: (request, reply) => {
+					connection.query('show tables', (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -19,10 +19,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'POST',
 				path: '/api/v1/table/select',
-				handler: function(request, reply) {
-					var tblName = request.payload.tblName;
+				handler: (request, reply) => {
+					let tblName = request.payload.tblName;
 
-					connection.query('SELECT * FROM ' + tblName, function(error, rows) {
+					connection.query('SELECT * FROM ' + tblName, (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -40,10 +40,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'POST',
 				path: '/api/v1/table/describe',
-				handler: function(request, reply) {
-					var tblName = request.payload.tblName;
+				handler: (request, reply) => {
+					let tblName = request.payload.tblName;
 
-					connection.query('DESCRIBE ' + tblName, function(error, rows) {
+					connection.query('DESCRIBE ' + tblName, (error, rows) => {
 						if (error) {
 							throw error;
 						}
@@ -61,10 +61,10 @@ module.exports = function(connection, Joi) {
 			}, {
 				method: 'DELETE',
 				path: '/api/v1/table/drop',
-				handler: function(request, reply) {
-					var tblName = request.payload.tblName;
+				handler: (request, reply) => {
+					let tblName = request.payload.tblName;
 
-					connection.query('DROP TABLE ' + tblName, function(error, rows) {
+					connection.query('DROP TABLE ' + tblName, (error, rows) => {
 						if (error) {
 							throw error;
 						}

@@ -3,14 +3,14 @@ module.exports = function(connection, Joi) {
 	'use strict';
 
 	return {
-		runSQL: function() {
+		runSQL: () => {
 			return [{
 				method: 'POST',
 				path: '/api/v1/sql/run',
-				handler: function(request, reply) {
-					var rawSQLQuery = request.payload.rawSQLQuery;
+				handler: (request, reply) => {
+					let rawSQLQuery = request.payload.rawSQLQuery;
 
-					connection.query(rawSQLQuery, function(error, rows) {
+					connection.query(rawSQLQuery, (error, rows) => {
 						if (error) {
 							throw error;
 						}
