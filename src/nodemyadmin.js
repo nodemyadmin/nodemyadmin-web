@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import modal from 'angular-ui-bootstrap/src/modal';
 
 import PageNotFound from './app/Errors/PageNotFound.html';
 import PageNotFoundCharacter from './assets/imgs/page-not-found.png';
