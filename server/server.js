@@ -5,6 +5,8 @@ import mysql from 'mysql';
 import Joi from 'joi';
 import good from 'good';
 import goodConsole from 'good-console';
+import path from 'path';
+import Inert from 'inert';
 
 /**
  * List of configuration requires.
@@ -41,34 +43,10 @@ let server = new Hapi.Server();
  * Add a connection to the server, passing in a port number to listen on.
  */
 server.connection({
-	"host": STACKCONF.server.host,
-	"port": STACKCONF.server.port
+  host: STACKCONF.server.host,
+	port: STACKCONF.server.port
 });
-
-/**
- * Adding routes and serving static files via directory handler.
- */
-server.route({
-	method: 'GET',
-	path: '/{param*}',
-	handler: {
-		directory: {
-			path: STACKCONF.client.staticServe,
-			listing: STACKCONF.client.listing,
-			index: STACKCONF.client.index,
-			showHidden: STACKCONF.clientshowHidden
-		}
-	}
-});
-
-server.route(dbApi.databases());
-server.route(tblApi.tables());
-server.route(sqlApi.runSQL());
-
-/**
- * Registers a plugin,
- * Here, Good, Good-console are being register to server.
- */
+server.register(Inert, () => {});
 server.register({
 	register: good,
 	options: {
@@ -80,26 +58,42 @@ server.register({
 			}
 		}]
 	}
-}, (error) => {
-	if (error) {
-		throw error;
-	}
+});
 
-	/**
-	 * Starts the hapi server connections by listening
-	 * for incoming requests on the configured port of each listener
-	 * (unless the connection was configured with autoListen set to false).
-	 */
-	server.start((error) => {
+/**
+ * Adding routes and serving static files via directory handler.
+ */
+server.route({
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: STACKCONF.client.staticServe,
+            redirectToSlash: true,
+            listing: STACKCONF.client.listing,
+      			index: STACKCONF.client.index,
+      			showHidden: STACKCONF.clientshowHidden
+        }
+    }
+});
 
-		if (error) {
-			throw error;
-		}
-		/**
+server.route(dbApi.databases());
+server.route(tblApi.tables());
+server.route(sqlApi.runSQL());
+
+/**
+ * Starts the hapi server connections by listening
+ * for incoming requests on the configured port of each listener
+ * (unless the connection was configured with autoListen set to false).
+ */
+server.start((error) => {
+    if (error) {
+        throw error;
+    }
+    /**
 		 * Logs server events that cannot be associated with a specific request.
 		 * When called the server emits a 'log' event which can be used by Good plugin
 		 * to record the information or output to the console via Good-console format.
 		 */
-		server.log("Info", "Server running at: ", server.info.uri);
-	});
+		console.log("Info", "Server running at: ", server.info.uri);
 });
