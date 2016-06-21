@@ -44,7 +44,7 @@ nodemyadmin.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('pagenotfound', {
       url: '/pagenotfound',
-      templateUrl: 'PageNotFound',
+      templateUrl: PageNotFound,
       controller: function($scope) {
         $scope.PageNotFoundCharacter = PageNotFoundCharacter;
       }
