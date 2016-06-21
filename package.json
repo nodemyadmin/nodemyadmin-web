@@ -43,6 +43,7 @@
     "good": "^6.2.0",
     "good-console": "^5.0.2",
     "hapi": "^13.4.1",
+    "inert": "^4.0.0",
     "joi": "^6.5.0",
     "jquery": "^2.1.4",
     "jsonwebtoken": "^5.4.1",
