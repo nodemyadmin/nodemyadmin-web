@@ -1,8 +1,6 @@
-(function() {
-	'use strict';
+'use strict';
 
-	exports.register.attributes = {
-		name: 'api',
-		version: 'v1'
-	};
-})();
+exports.register.attributes = {
+	name: 'api',
+	version: 'v1'
+};
