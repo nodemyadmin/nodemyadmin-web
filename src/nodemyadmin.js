@@ -6,7 +6,6 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import modal from 'angular-ui-bootstrap/src/modal';
 
 import PageNotFound from './app/Errors/PageNotFound.html';
 import PageNotFoundCharacter from './assets/imgs/page-not-found.png';
@@ -15,8 +14,6 @@ import './app/Errors/PageNotFound.less';
 let nodemyadmin = angular.module('nodemyadmin', [uiRouter]);
 
 nodemyadmin.config(function($stateProvider, $urlRouterProvider) {
-
-  $urlRouterProvider.otherwise('/pagenotfound');
 
   $stateProvider
     .state('/', {
@@ -50,4 +47,7 @@ nodemyadmin.config(function($stateProvider, $urlRouterProvider) {
         $scope.PageNotFoundCharacter = PageNotFoundCharacter;
       }
     });
+
+  $urlRouterProvider.otherwise('/pagenotfound');
+  
 });
