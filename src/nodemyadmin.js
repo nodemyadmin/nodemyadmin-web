@@ -6,48 +6,9 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import routing from './app/router/router-config';
 
-import PageNotFound from './app/Pages/PageNotFound/PageNotFound.html';
-import PageNotFoundCharacter from './assets/imgs/page-not-found.png';
-import './app/Pages/PageNotFound/PageNotFound.less';
+import Dashboard from './app/pages/dashboard/dashboard';
 
-let nodemyadmin = angular.module('nodemyadmin', [uiRouter]);
-
-nodemyadmin.config(function($stateProvider, $urlRouterProvider) {
-
-  $stateProvider
-    .state('/', {
-      url: '/',
-      template: '<h1>Dashboard</h1>'
-    })
-    .state('databases', {
-      url: '/databases',
-      template: '<h1>Databases</h1>'
-    })
-    .state('sql', {
-      url: '/sql',
-      template: '<h1>SQL</h1>'
-    })
-    .state('users', {
-      url: '/users',
-      template: '<h1>User Accounts</h1>'
-    })
-    .state('tables', {
-      url: '/tables',
-      template: '<h1>Tables</h1>'
-    })
-    .state('settings', {
-      url: '/settings',
-      template: '<h1>Settings</h1>'
-    })
-    .state('pagenotfound', {
-      url: '/pagenotfound',
-      templateUrl: PageNotFound,
-      controller: function($scope) {
-        $scope.PageNotFoundCharacter = PageNotFoundCharacter;
-      }
-    });
-
-  $urlRouterProvider.otherwise('/pagenotfound');
-
-});
+angular.module('nodemyadmin', [uiRouter, Dashboard])
+  .config(routing);
