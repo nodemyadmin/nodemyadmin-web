@@ -3,10 +3,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-import Routing from '../../router/router-config';
+import DashboardRoute from './dashboard-route';
 import DashboardCtrl from './dashboard-ctrl';
 
-export default angular.module('dashboard', [uiRouter])
-  .config(Routing)
+export default angular.module('nodemyadmin.dashboard', [uiRouter])
+  .config(DashboardRoute)
   .controller('DashboardCtrl', DashboardCtrl)
   .name;
