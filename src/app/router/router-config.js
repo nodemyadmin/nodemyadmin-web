@@ -1,7 +1,5 @@
 'use strict';
 
-import uiRouter from 'angular-ui-router';
-
 import PageNotFound from '../pages/pageNotFound/pageNotFound.html';
 import PageNotFoundCharacter from '../../assets/imgs/page-not-found.png';
 import '../pages/pageNotFound/pageNotFound.less';
