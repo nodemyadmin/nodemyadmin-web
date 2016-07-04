@@ -8,8 +8,9 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './app/router/router-config';
 
-import Dashboard from './app/pages/dashboard/dashboard';
-import Databases from './app/pages/databases/databases';
+import DashboardPage from './app/pages/dashboard/dashboard';
+import DatabasesPage from './app/pages/databases/databases';
+import SqlPage from './app/pages/sql/sql';
 
-angular.module('nodemyadmin', [uiRouter, Dashboard, Databases])
+angular.module('nodemyadmin', [uiRouter, DashboardPage, DatabasesPage, SqlPage])
   .config(routing);
