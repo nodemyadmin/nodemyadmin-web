@@ -6,10 +6,6 @@ import '../pages/pageNotFound/pageNotFound.less';
 
 export default function routing($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('databases', {
-      url: '/databases',
-      template: '<h1>Databases</h1>'
-    })
     .state('sql', {
       url: '/sql',
       template: '<h1>SQL</h1>'

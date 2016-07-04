@@ -9,6 +9,7 @@ import uiRouter from 'angular-ui-router';
 import routing from './app/router/router-config';
 
 import Dashboard from './app/pages/dashboard/dashboard';
+import Databases from './app/pages/databases/databases';
 
-angular.module('nodemyadmin', [uiRouter, Dashboard])
+angular.module('nodemyadmin', [uiRouter, Dashboard, Databases])
   .config(routing);
