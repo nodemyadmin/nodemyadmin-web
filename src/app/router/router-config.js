@@ -10,10 +10,6 @@ export default function routing($stateProvider, $urlRouterProvider) {
       url: '/users',
       template: '<h1>User Accounts</h1>'
     })
-    .state('tables', {
-      url: '/tables',
-      template: '<h1>Tables</h1>'
-    })
     .state('settings', {
       url: '/settings',
       template: '<h1>Settings</h1>'
