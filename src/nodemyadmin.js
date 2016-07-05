@@ -12,6 +12,8 @@ import DashboardPage from './app/pages/dashboard/dashboard';
 import DatabasesPage from './app/pages/databases/databases';
 import SqlPage from './app/pages/sql/sql';
 import TablePage from './app/pages/tables/tables';
+import UsersPage from './app/pages/users/users';
+import SettingsPage from './app/pages/settings/settings';
 
-angular.module('nodemyadmin', [uiRouter, DashboardPage, DatabasesPage, SqlPage, TablePage])
+angular.module('nodemyadmin', [uiRouter, DashboardPage, DatabasesPage, SqlPage, TablePage, UsersPage])
   .config(routing);

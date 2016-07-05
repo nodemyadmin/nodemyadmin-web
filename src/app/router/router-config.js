@@ -6,10 +6,6 @@ import '../pages/pageNotFound/pageNotFound.less';
 
 export default function routing($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('users', {
-      url: '/users',
-      template: '<h1>User Accounts</h1>'
-    })
     .state('settings', {
       url: '/settings',
       template: '<h1>Settings</h1>'
