@@ -7,6 +7,6 @@ import SqlRoute from './sql-route';
 import SqlCtrl from './sql-ctrl';
 
 export default angular.module('nodemyadmin.sql', [uiRouter])
-  .config(SqlRoute)
+  .config(['$stateProvider', SqlRoute])
   .controller('SqlCtrl', SqlCtrl)
   .name;

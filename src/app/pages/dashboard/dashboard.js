@@ -7,6 +7,6 @@ import DashboardRoute from './dashboard-route';
 import DashboardCtrl from './dashboard-ctrl';
 
 export default angular.module('nodemyadmin.dashboard', [uiRouter])
-  .config(DashboardRoute)
+  .config(['$stateProvider', DashboardRoute])
   .controller('DashboardCtrl', DashboardCtrl)
   .name;

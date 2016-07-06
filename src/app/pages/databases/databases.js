@@ -7,6 +7,6 @@ import DatabasesRoute from './databases-route';
 import DatabasesCtrl from './databases-ctrl';
 
 export default angular.module('nodemyadmin.databases', [uiRouter])
-  .config(DatabasesRoute)
+  .config(['$stateProvider', DatabasesRoute])
   .controller('DatabasesCtrl', DatabasesCtrl)
   .name;
