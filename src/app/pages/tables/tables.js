@@ -7,6 +7,6 @@ import TablesRoute from './tables-route';
 import TablesCtrl from './tables-ctrl';
 
 export default angular.module('nodemyadmin.tables', [uiRouter])
-  .config(TablesRoute)
+  .config(['$stateProvider', TablesRoute])
   .controller('TablesCtrl', TablesCtrl)
   .name;

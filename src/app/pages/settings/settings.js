@@ -7,6 +7,6 @@ import SettingsRoute from './settings-route';
 import SettingsCtrl from './settings-ctrl';
 
 export default angular.module('nodemyadmin.settings', [uiRouter])
-  .config(SettingsRoute)
+  .config(['$stateProvider', SettingsRoute])
   .controller('SettingsCtrl', SettingsCtrl)
   .name;

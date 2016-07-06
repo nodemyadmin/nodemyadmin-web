@@ -7,6 +7,6 @@ import UsersRoute from './users-route';
 import UsersCtrl from './users-ctrl';
 
 export default angular.module('nodemyadmin.users', [uiRouter])
-  .config(UsersRoute)
+  .config(['$stateProvider', UsersRoute])
   .controller('UsersCtrl', UsersCtrl)
   .name;
