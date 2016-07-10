@@ -1,21 +1,18 @@
 'use strict';
 
-import DashboardCtrl from './dashboard-ctrl';
+import Dashboard from './dashboard';
 
-describe('JavaScript addition operator', function () {
-    it('adds two numbers together', function () {
-        expect(1 + 2).toEqual(3);
-    });
+describe('Controller: Dashboard', function () {
+    let $controller;
 
-    it('adds two numbers together', function () {
-        expect(1 + 2).toEqual(3);
-    });
+    beforeEach(angular.mock.module(Dashboard));
 
-    it('adds two numbers together', function () {
-        expect(1 + 2).toEqual(3);
-    });
+    beforeEach(angular.mock.inject(function(_$controller_) {
+        $controller = _$controller_;
+    }));
 
-    it('adds two numbers together', function () {
-        expect(1 + 2).toEqual(3);
+    it('name is initialized to Ashwin', function() {
+        let ctrl = $controller('DashboardCtrl');
+        expect(ctrl.name).toBe('Ashwin');
     });
 });
