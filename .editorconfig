@@ -15,11 +15,11 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 
 # Tab indentation (no size specified)
-[src/app/**/*.js]
+[src/app/**/*.js,server/**/*.js]
 indent_style = tab
-indent_size = 4
+indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
-[{package.json,webpack.config.js,server/**/*.js}]
+[{package.json,webpack.config.js,test.webpack.config.js,karma.conf.js,.babelrc,.eslintrc,.lesshintrc}]
 indent_style = tab
-indent_size = 4
+indent_size = 2
