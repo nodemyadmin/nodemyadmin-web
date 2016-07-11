@@ -14,7 +14,8 @@
     "dev": "webpack -d --watch",
     "build": "webpack -p",
     "eslint": "./node_modules/.bin/eslint 'src/app/**/*.js'",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "lesslint": "./node_modules/.bin/lesshint src/app/"
   },
   "repository": {
     "type": "git",
@@ -70,6 +71,7 @@
     "karma-webpack": "^1.7.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "lesshint": "^1.5.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
