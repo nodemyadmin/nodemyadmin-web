@@ -15,7 +15,7 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 
 # Tab indentation (no size specified)
-[src/app/**/*.js,server/**/*.js]
+[src/**/*.js,server/**/*.js]
 indent_style = tab
 indent_size = 2
 
