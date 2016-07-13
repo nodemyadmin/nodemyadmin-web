@@ -2,7 +2,7 @@
 
 import PageNotFoundTpl from './pageNotFound-tpl.html';
 
-export default function routing($stateProvider) {
+export default function routes($stateProvider) {
 
   $stateProvider
     .state('pagenotfound', {
