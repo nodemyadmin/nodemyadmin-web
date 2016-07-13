@@ -12,7 +12,7 @@
   "scripts": {
     "start": "babel-node ./server/server.js",
     "dev": "webpack -d --watch",
-    "build": "webpack -p",
+    "build": "webpack -p -d",
     "eslint": "./node_modules/.bin/eslint 'src/app/**/*.js'",
     "test": "karma start karma.conf.js",
     "lesslint": "./node_modules/.bin/lesshint src/app/"
