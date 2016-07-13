@@ -1,12 +1,23 @@
-<form>
-  <h2>{{formname}}</h2>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Email">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Sign in to nodemyadmin <sup>v1.0.0</sup></h3>
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password">
+  <div class="panel-body">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <button type="button" class="btn btn-default"><i class="icon-exclamation-sign"></i> Login</button>
+			<button type="button" class="btn btn-success"><i class="icon-question-sign"></i> Help</button>
+    </form>
   </div>
-  <button type="submit" class="btn btn-default">Login</button>
-</form>
+</div>

@@ -6,9 +6,9 @@ import LoginTpl from './login.html';
 function loginBox() {
   return {
     restrict: 'E',
-	scope: {
-		formname: "@formname"
-	},
+  	scope: {
+  		name: "="
+  	},
     templateUrl: LoginTpl
   }
 }

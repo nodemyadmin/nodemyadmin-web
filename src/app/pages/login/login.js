@@ -6,7 +6,9 @@ import uiRouter from 'angular-ui-router';
 import LoginRoute from './login-route';
 import LoginCtrl from './login-ctrl';
 
-export default angular.module('nodemyadmin.login', [uiRouter])
+import LoginDirective from '../../components/login/login-directive';
+
+export default angular.module('nodemyadmin.login', [uiRouter, LoginDirective])
   .config(['$stateProvider', LoginRoute])
   .controller('LoginCtrl', LoginCtrl)
   .name;
