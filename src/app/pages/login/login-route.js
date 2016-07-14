@@ -2,7 +2,7 @@
 
 import LoginTpl from './login-tpl.html';
 
-export default function routing($stateProvider) {
+export default function routes($stateProvider) {
 
   $stateProvider
     .state('login', {
