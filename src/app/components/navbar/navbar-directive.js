@@ -2,9 +2,7 @@
 
 import angular from 'angular';
 import NavbarTpl from './navbar.html';
-import NavItemDirective from './navItem/navItem-directive';
-
-import './navbar.less';
+import NavGroupDirective from './navGroup/navGroup-directive';
 
 function navbar() {
   return {
@@ -19,6 +17,6 @@ function navbar() {
   }
 }
 
-export default angular.module('directives.navbar', [NavItemDirective])
+export default angular.module('directives.navbar', [NavGroupDirective])
   .directive('navbar', navbar)
   .name;
