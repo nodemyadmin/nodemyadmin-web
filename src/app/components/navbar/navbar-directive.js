@@ -2,7 +2,7 @@
 
 import angular from 'angular';
 import NavbarTpl from './navbar.html';
-import NavItemDirective from './navItem-directive';
+import NavItemDirective from './navItem/navItem-directive';
 
 import './navbar.less';
 
