@@ -2,26 +2,23 @@
 
 import angular from 'angular';
 import NavbarTpl from './navbar.html';
+import NavItemDirective from './navItem-directive';
 
-import NavbarCtrl from './navbar-ctrl';
-import NavbarDirective from './navItem-directive';
+import './navbar.less';
 
 function navbar() {
   return {
+    transclude: true,
     restrict: 'E',
     scope: {
       name: '@',
-      linkTo: '@',
-      version: '@'
+      version: '@',
+      linkTo: '@'
     },
-  	templateUrl: NavbarTpl,
-    link: function(scope, el, attr) {
-
-    }
+  	templateUrl: NavbarTpl
   }
 }
 
-export default angular.module('directives.navbar', [NavbarDirective])
+export default angular.module('directives.navbar', [NavItemDirective])
   .directive('navbar', navbar)
-  .controller('NavbarCtrl', ['$scope', NavbarCtrl])
   .name;

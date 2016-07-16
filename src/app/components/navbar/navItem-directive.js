@@ -3,12 +3,14 @@
 import angular from 'angular';
 import NavItemTpl from './navItem-tpl.html';
 
-function navitem() {
+function navItem() {
   return {
-    require: '^navbar',
+    // require: '^navbar',
     restrict: 'E',
+    replace: true,
   	scope: {
-  		label: '@'
+  		label: '@',
+      linkTo: '@'
   	},
     templateUrl: NavItemTpl,
     link: function(scope, el, attr, ctrl) {
@@ -18,5 +20,5 @@ function navitem() {
 }
 
 export default angular.module('directives.navItem', [])
-  .directive('navItem', navitem)
+  .directive('navItem', navItem)
   .name;

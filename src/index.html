@@ -7,11 +7,12 @@
 </head>
 <body>
 
-	<navbar name="nodemyadmin" version="0.0.0" linkTo="#/home">
-		<nav-item label="Dashboard" linkTo="#"></nav-item>
-		<nav-item label="Databases" linkTo="#"></nav-item>
-		<nav-item label="SQL"></nav-item>
-	</navbar>
+	<page-header ng-transclude>
+		<navbar name="nodemyadmin" version="0.0.0" link-to="#">
+			<nav-item class="nav-item" label="Dashboard" link-to="#"></nav-item>
+			<nav-item class="nav-item" label="Databases" link-to="#databases"></nav-item>
+		</navbar>
+	</page-header>
 
 	<div class="container">
 		<ui-view></ui-view>
