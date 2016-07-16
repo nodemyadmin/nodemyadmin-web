@@ -10,7 +10,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Routing from './app/router/router-config';
 
-import HeaderDirective from './app/components/navbar/navbar-directive';
+import PageHeaderDirective from './app/components/pageHeader/pageHeader-directive';
 
 import DashboardPage from './app/pages/dashboard/dashboard';
 import DatabasesPage from './app/pages/databases/databases';
@@ -30,6 +30,6 @@ angular.module('nodemyadmin', [
     UsersPage,
     PageNotFoundPage,
     LoginPage,
-    HeaderDirective
+    PageHeaderDirective
   ])
   .config(['$stateProvider', '$urlRouterProvider', Routing]);
