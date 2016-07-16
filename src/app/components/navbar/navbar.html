@@ -1,6 +1,20 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <i class="fa fa-bars fa-lg"></i>
+      </button>
+      <a class="navbar-brand" href="{{linkTo}}" title="{{name}} v{{version}} Alpha">{{name}} <sup><small>v{{version}} Alpha</small></sup></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul ng-translcude class="nav navbar-nav"></ul>
+    </div>
+  </div>
+</nav>
+
+<!--<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <i class="fa fa-bars fa-lg"></i>
       </button>
@@ -12,8 +26,7 @@
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <!-- <input type="text" class="form-control" placeholder="Search"> -->
-          <input type="text" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" ng-click="navbar.stateDisplay()" class="btn btn-default">Search</button>
       </form>
@@ -70,4 +83,4 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
