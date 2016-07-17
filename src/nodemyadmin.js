@@ -28,6 +28,7 @@ angular.module('nodemyadmin', [
     SqlPage,
     TablePage,
     UsersPage,
+    SettingsPage,
     PageNotFoundPage,
     LoginPage,
     PageHeaderDirective
