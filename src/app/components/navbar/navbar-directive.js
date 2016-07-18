@@ -2,21 +2,23 @@
 
 import angular from 'angular';
 import NavbarTpl from './navbar.html';
-import NavGroupDirective from './navGroup/navGroup-directive';
+import NavbarService from './navbar-service';
 
-function navbar() {
+function navbar(NavbarService) {
   return {
-    transclude: true,
     restrict: 'E',
     scope: {
       name: '@',
       version: '@',
       linkTo: '@'
     },
-  	templateUrl: NavbarTpl
+  	templateUrl: NavbarTpl,
+    link: (scope, el, attr) => {
+      scope.navbar = NavbarService.getNavbar();
+    }
   }
 }
 
-export default angular.module('directives.navbar', [NavGroupDirective])
-  .directive('navbar', navbar)
+export default angular.module('directives.navbar', [NavbarService])
+  .directive('navbar', ['NavbarService', navbar])
   .name;
