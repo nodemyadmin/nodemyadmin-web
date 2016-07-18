@@ -9,7 +9,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul ng-repeat="nav in navbar.navItems" class="nav navbar-nav {{nav.placement}}">
         <li ng-if="!nav.subItems" title="{{nav.title}}"><a href="{{nav.linkTo}}">{{nav.label}}</a></li>
-        <li ng-if="nav.subItems" class="dropdown" title="{{nav.title}}">
+        <li ng-if="nav.subItems" class="dropdown" title="{{nav.title}}" ng-controller="NavbarCtrl">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-controller="NavbarCtrl" ng-click="openSubItems($event)">
             <i ng-if="nav.icon" class="fa {{nav.icon.size}} {{nav.icon.name}}"></i> <span class="caret"></span>
             {{nav.label}}

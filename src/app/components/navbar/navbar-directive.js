@@ -22,5 +22,5 @@ function navbar(NavbarService) {
 
 export default angular.module('directives.navbar', [NavbarService])
   .directive('navbar', ['NavbarService', navbar])
-  .controller('NavbarCtrl', ['$scope', NavbarCtrl])
+  .controller('NavbarCtrl', ['$scope', '$document', NavbarCtrl])
   .name;
