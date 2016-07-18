@@ -7,13 +7,18 @@
       <a class="navbar-brand" href="{{linkTo}}" title="{{name}} v{{version}} Alpha">{{name}} <sup><small>v{{version}} Alpha</small></sup></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul ng-repeat="nav in navbar.navItems" class="nav navbar-nav">
-        <li ng-if="!nav.subItems"><a href="{{nav.linkTo}}" title="{{nav.label}}">{{nav.label}}</a></li>
-        <li ng-if="nav.subItems" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-controller="NavbarCtrl" ng-click="openSubItems($event)">{{nav.label}}</a>
+      <ul ng-repeat="nav in navbar.navItems" class="nav navbar-nav {{nav.placement}}">
+        <li ng-if="!nav.subItems" title="{{nav.title}}"><a href="{{nav.linkTo}}">{{nav.label}}</a></li>
+        <li ng-if="nav.subItems" class="dropdown" title="{{nav.title}}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-controller="NavbarCtrl" ng-click="openSubItems($event)">
+            <i ng-if="nav.icon" class="fa {{nav.icon.size}} {{nav.icon.name}}"></i> <span class="caret"></span>
+            {{nav.label}}
+          </a>
           <ul class="dropdown-menu">
             <li ng-repeat="subnav in nav.subItems" ng-controller="NavbarCtrl" ng-click="closeSubItems($event)">
-              <a href="{{subnav.linkTo}}" title="{{subnav.label}}">{{subnav.label}}</a>
+              <a href="{{subnav.linkTo}}" title="{{subnav.title}}" target="{{subnav.target}}">
+                {{subnav.label}}
+              </a>
             </li>
           </ul>
         </li>
