@@ -16,12 +16,14 @@ class NavbarService {
       }, {
         "title": "SQL",
         "label": "SQL",
-        "linkTo": "#sql",
-        "icon": "#"
+        "linkTo": "#sql"
       }, {
-        "label": "Developers Connection",
         "title": "Developers Connection",
         "linkTo": "#",
+        "icon": {
+          "size": "fa-lg",
+          "name": "fa-connectdevelop"
+        },
         "placement": "pull-right",
         "subItems": [{
           "label": "Github Home Page",
@@ -55,9 +57,12 @@ class NavbarService {
           "linkTo": "//github.com/hegdeashwin/nodemyadmin"
         }]
       }, {
-        "label": "Help",
         "title": "More Information, Help etc.",
         "linkTo": "#",
+        "icon": {
+          "size": "fa-lg",
+          "name": "fa-life-saver"
+        },
         "placement": "pull-right",
         "subItems": [{
           "title": "Take a Tour",

@@ -10,10 +10,15 @@
       <ul ng-repeat="nav in navbar.navItems" class="nav navbar-nav {{nav.placement}}">
         <li ng-if="!nav.subItems" title="{{nav.title}}"><a href="{{nav.linkTo}}">{{nav.label}}</a></li>
         <li ng-if="nav.subItems" class="dropdown" title="{{nav.title}}">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-controller="NavbarCtrl" ng-click="openSubItems($event)">{{nav.label}}</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-controller="NavbarCtrl" ng-click="openSubItems($event)">
+            <i ng-if="nav.icon" class="fa {{nav.icon.size}} {{nav.icon.name}}"></i> <span class="caret"></span>
+            {{nav.label}}
+          </a>
           <ul class="dropdown-menu">
             <li ng-repeat="subnav in nav.subItems" ng-controller="NavbarCtrl" ng-click="closeSubItems($event)">
-              <a href="{{subnav.linkTo}}" title="{{subnav.title}}" target="{{subnav.target}}">{{subnav.label}}</a>
+              <a href="{{subnav.linkTo}}" title="{{subnav.title}}" target="{{subnav.target}}">
+                {{subnav.label}}
+              </a>
             </li>
           </ul>
         </li>
