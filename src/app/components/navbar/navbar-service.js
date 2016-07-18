@@ -28,6 +28,9 @@ class NavbarService {
           "label": "Release Page",
           "target": "_blank",
           "linkTo": "//github.com/hegdeashwin/nodemyadmin/releases"
+        }, {
+          "label": "Release Page",
+          "linkTo": "#databases"
         }]
       }]
     };
