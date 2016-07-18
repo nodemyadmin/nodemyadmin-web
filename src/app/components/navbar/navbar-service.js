@@ -24,7 +24,7 @@ class NavbarService {
           "size": "fa-lg",
           "name": "fa-connectdevelop"
         },
-        "placement": "pull-right",
+        "placement": "navbar-right",
         "subItems": [{
           "label": "Github Home Page",
           "target": "_blank",
@@ -63,7 +63,7 @@ class NavbarService {
           "size": "fa-lg",
           "name": "fa-life-saver"
         },
-        "placement": "pull-right",
+        "placement": "navbar-right",
         "subItems": [{
           "title": "Take a Tour",
           "label": "Take a Tour",
