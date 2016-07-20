@@ -19,7 +19,7 @@ import TablePage from './app/pages/tables/tables';
 import UsersPage from './app/pages/users/users';
 import SettingsPage from './app/pages/settings/settings';
 import PageNotFoundPage from './app/pages/pageNotFound/pageNotFound';
-import LoginPage from './app/pages/login/login';
+import SignInPage from './app/pages/signin/signin';
 
 angular.module('nodemyadmin', [
     uiRouter,
@@ -30,7 +30,7 @@ angular.module('nodemyadmin', [
     UsersPage,
     SettingsPage,
     PageNotFoundPage,
-    LoginPage,
+    SignInPage,
     PageHeaderDirective
   ])
   .config(['$stateProvider', '$urlRouterProvider', Routing]);
