@@ -35,6 +35,9 @@
   },
   "dependencies": {
     "angular": "^1.5.5",
+    "angular-cookies": "^1.5.7",
+    "angular-messages": "^1.5.7",
+    "angular-resource": "^1.5.7",
     "angular-ui-bootstrap": "^1.3.3",
     "angular-ui-router": "^0.2.18",
     "bootstrap": "^3.3.6",
