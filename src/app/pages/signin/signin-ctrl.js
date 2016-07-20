@@ -1,5 +1,5 @@
 'use strict';
 
-export default class LoginCtrl {
+export default class SignInCtrl {
   constructor() { }
 };
