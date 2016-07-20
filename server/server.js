@@ -20,6 +20,7 @@ import MYSQLCONF from '../configs/mysql.conf';
 import databaseRoutes from './routes/v1/databases';
 import tableRoutes from './routes/v1/tables';
 import runSQLRoutes from './routes/v1/sql';
+import authenticateRoutes from './routes/v1/authenticate';
 
 /**
  * Create Mysql Connection.
@@ -33,6 +34,7 @@ connection.connect();
 let dbApi = databaseRoutes(connection, Joi);
 let	tblApi = tableRoutes(connection, Joi);
 let	sqlApi = runSQLRoutes(connection, Joi);
+let authenticateApi = authenticateRoutes();
 
 /**
  * Create a new hapi server object.
@@ -80,6 +82,7 @@ server.route({
 server.route(dbApi.databases());
 server.route(tblApi.tables());
 server.route(sqlApi.runSQL());
+server.route(authenticateApi.authenticate());
 
 /**
  * Starts the hapi server connections by listening
