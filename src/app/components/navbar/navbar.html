@@ -15,8 +15,8 @@
             {{nav.label}}
           </a>
           <ul class="dropdown-menu">
-            <li ng-repeat="subnav in nav.subItems" ng-controller="NavbarCtrl" ng-click="closeSubItems($event)">
-              <a href="{{subnav.linkTo}}" title="{{subnav.title}}" target="{{subnav.target}}">
+            <li ng-repeat="subnav in nav.subItems" ng-class="subnav.divider ? 'divider' : ''" ng-controller="NavbarCtrl" ng-click="closeSubItems($event)">
+              <a ng-if="!subnav.divider" href="{{subnav.linkTo}}" title="{{subnav.title}}" target="{{subnav.target}}">
                 {{subnav.label}}
               </a>
             </li>
