@@ -13,13 +13,15 @@
           <div class="form-group">
             <label for="username">Username</label>
             <input ng-model="formUsername" type="text" class="form-control" id="formUsername" placeholder="E.g. ashwin">
+            <p class="help-block" ng-show="form.formUsername.$error.required">Username is required</p>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input ng-model="formPassword" type="password" class="form-control" id="formPassword" placeholder="Minimum six characters long">
+            <p class="help-block" ng-show="form.formPassword.$error.required">Password is required</p>
           </div>
-          <button type="button" class="btn btn-default" ng-click="signin.isAuthenticate()"><i class="icon-exclamation-sign"></i> SignIn</button>
-    			<button type="button" class="btn btn-success"><i class="icon-question-sign"></i> Help</button>
+          <input type="submit" class="btn btn-default" ng-click="signin.isAuthenticate()" value="Sign In" />
+          <a href="help?signin" class="btn btn-success">Help</a>
         </form>
       </div>
     </div>

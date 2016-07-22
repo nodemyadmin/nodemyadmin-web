@@ -7,10 +7,11 @@ export default class SignInCtrl {
     this.rootScope = $rootScope;
     this.cookieStore = $cookies;
     this.signInService = SignInService;
+
+    this.unsetCredentials();
   }
 
   setCredentials(username, password) {
-    console.log('Log: Setting Credentials');
     this.rootScope.authenticate = {
       username: username
     };
@@ -19,17 +20,21 @@ export default class SignInCtrl {
   }
 
   unsetCredentials() {
-    console.log('Log: Unset Credentials');
     this.rootScope.authenticate = {};
     this.cookieStore.remove('authenticate');
   }
 
   isAuthenticate() {
-    console.log('Log: IsAuthenticate Controller');
-    this.signInService.authenticate({
+    let promise = this.signInService.authenticate({
       username: formUsername.value,
       password: formPassword.value
     });
-    this.setCredentials(formUsername.value, formPassword.value);
+
+    promise.then((response) => {
+      console.log(response);
+      this.setCredentials(formUsername.value, formPassword.value);
+    }, (response) => {
+      console.error('Error: ', response);
+    });
   }
 };
