@@ -5,24 +5,23 @@ import angular from 'angular';
 class SignInService {
   constructor($http, $q) {
     this.http = $http;
-    this.deferred = $q.defer();
+    this.q = $q;
   };
 
   authenticate(authData) {
-    console.log('Log: Authenticate Service');
+    let deferred = this.q.defer();
+
     this.http({
       method: 'POST',
       url: '/api/v1/authenticate',
       data: authData
     }).then((response) => {
-      console.log('Log: Success Callback');
-      this.deferred.resolve(response);
+      deferred.resolve(response.data);
     }, (response) => {
-      console.log('Log: Error Callback');
-      this.deferred.reject(response);
+      deferred.reject(response);
     });
 
-    return this.deferred.promise;
+    return deferred.promise;
   }
 };
 

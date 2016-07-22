@@ -3,14 +3,19 @@
 import angular from 'angular';
 
 export default class SignInCtrl {
-  constructor($rootScope, $scope, $cookies, SignInService) {
+  constructor($rootScope, $scope, $cookies, $location, SignInService) {
     this.rootScope = $rootScope;
+    this.scope = $scope;
     this.cookieStore = $cookies;
+    this.location = $location;
+
     this.signInService = SignInService;
+    this.unsetCredentials();
+
+    this.hasError = false;
   }
 
   setCredentials(username, password) {
-    console.log('Log: Setting Credentials');
     this.rootScope.authenticate = {
       username: username
     };
@@ -19,17 +24,38 @@ export default class SignInCtrl {
   }
 
   unsetCredentials() {
-    console.log('Log: Unset Credentials');
     this.rootScope.authenticate = {};
     this.cookieStore.remove('authenticate');
   }
 
   isAuthenticate() {
-    console.log('Log: IsAuthenticate Controller');
-    this.signInService.authenticate({
+    let promise = this.signInService.authenticate({
       username: formUsername.value,
       password: formPassword.value
     });
-    this.setCredentials(formUsername.value, formPassword.value);
+
+    promise.then((response) => {
+      if(response.isAuthenticate) {
+        this.setCredentials(formUsername.value, formPassword.value);
+        this.location.path('/');
+      } else {
+        this.scope.hasError = true;
+        this.scope.alert = {
+          type: 'danger',
+          msg: 'Username or password is incorrect. Please try again.'
+        };
+      }
+    }, (response) => {
+      this.scope.hasError = true;
+      this.scope.alert = {
+        type: 'danger',
+        msg: 'Some thing went wrong with services!'
+      };
+    });
   }
+
+  closeAlert(index) {
+    this.scope.hasError = false;
+  }
+
 };

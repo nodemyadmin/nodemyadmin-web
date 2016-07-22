@@ -14,6 +14,7 @@ export default angular.module('nodemyadmin.signin', [uiRouter, ngCookies, SignIn
       '$rootScope',
       '$scope',
       '$cookies',
+      '$location',
       'SignInService',
       SignInCtrl])
   .name;
