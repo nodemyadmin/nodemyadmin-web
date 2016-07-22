@@ -5,10 +5,11 @@
         <h3 class="panel-title">Sign into your MySQL account</h3>
       </div>
       <div class="panel-body">
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <!-- <div class="alert alert-danger alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <strong>Warning!</strong> Better check yourself, you're not looking too good.
-        </div>
+        </div> -->
+        <div uib-alert ng-show="hasError" ng-class="'alert alert-' + (alert.type)" close="signin.closeAlert()">{{alert.msg}}</div>
         <form class="authenticate-form">
           <div class="form-group">
             <label for="username">Username</label>

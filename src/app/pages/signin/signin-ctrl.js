@@ -3,12 +3,16 @@
 import angular from 'angular';
 
 export default class SignInCtrl {
-  constructor($rootScope, $scope, $cookies, SignInService) {
+  constructor($rootScope, $scope, $cookies, $location, SignInService) {
     this.rootScope = $rootScope;
+    this.scope = $scope;
     this.cookieStore = $cookies;
-    this.signInService = SignInService;
+    this.location = $location;
 
+    this.signInService = SignInService;
     this.unsetCredentials();
+
+    this.hasError = false;
   }
 
   setCredentials(username, password) {
@@ -31,10 +35,27 @@ export default class SignInCtrl {
     });
 
     promise.then((response) => {
-      console.log(response);
-      this.setCredentials(formUsername.value, formPassword.value);
+      if(response.isAuthenticate) {
+        this.setCredentials(formUsername.value, formPassword.value);
+        this.location.path('/');
+      } else {
+        this.scope.hasError = true;
+        this.scope.alert = {
+          type: 'danger',
+          msg: 'Username or password is incorrect. Please try again.'
+        };
+      }
     }, (response) => {
-      console.error('Error: ', response);
+      this.scope.hasError = true;
+      this.scope.alert = {
+        type: 'danger',
+        msg: 'Some thing went wrong with services!'
+      };
     });
   }
+
+  closeAlert(index) {
+    this.scope.hasError = false;
+  }
+
 };

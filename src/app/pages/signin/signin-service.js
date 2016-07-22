@@ -16,7 +16,6 @@ class SignInService {
       url: '/api/v1/authenticate',
       data: authData
     }).then((response) => {
-      console.log('Service: ', response.data);
       deferred.resolve(response.data);
     }, (response) => {
       deferred.reject(response);
