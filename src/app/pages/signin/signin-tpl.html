@@ -18,9 +18,11 @@
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input ng-model="formPassword" required type="password" name="formPassword" class="form-control" id="formPassword" placeholder="Minimum six characters long">
+            <input ng-model="formPassword" required type="password" name="formPassword" class="form-control" ng-minlength="4" ng-maxlength="255" id="formPassword" placeholder="Minimum six characters long">
             <div ng-show="authForm.$submitted">
               <p class="bg-danger text-danger inline-error-message" ng-show="authForm.formPassword.$error.required">Password is required</p>
+              <p class="bg-danger text-danger inline-error-message" ng-show="authForm.formPassword.$error.minlength">Password must be at least 4 characters long</p>
+              <p class="bg-danger text-danger inline-error-message" ng-show="authForm.formPassword.$error.maxlength">Password cannot exceed 255 characters long</p>
             </div>
           </div>
           <input type="submit" class="btn btn-default" value="Sign In" />
