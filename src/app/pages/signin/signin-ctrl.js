@@ -28,10 +28,14 @@ export default class SignInCtrl {
     this.cookieStore.remove('authenticate');
   }
 
-  isAuthenticate() {
+  validateCredentials() {
+    this.isAuthenticate();
+  }
+
+  isAuthenticate(username, password) {
     let promise = this.signInService.authenticate({
-      username: formUsername.value,
-      password: formPassword.value
+      username: username,
+      password: password
     });
 
     promise.then((response) => {
@@ -49,7 +53,7 @@ export default class SignInCtrl {
       this.scope.hasError = true;
       this.scope.alert = {
         type: 'danger',
-        msg: 'Some thing went wrong with services!'
+        msg: 'Some thing went wrong with service!'
       };
     });
   }

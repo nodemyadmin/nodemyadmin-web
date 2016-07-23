@@ -1,5 +1,6 @@
 'use strict';
 
+import './signin.less';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngCookies from 'angular-cookies';
