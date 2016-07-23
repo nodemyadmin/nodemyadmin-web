@@ -28,8 +28,10 @@ export default class SignInCtrl {
     this.cookieStore.remove('authenticate');
   }
 
-  validateCredentials() {
-    this.isAuthenticate();
+  submitCredentials(isValid) {
+    if (isValid) {
+      this.isAuthenticate(formUsername.value, formPassword.value);
+    }
   }
 
   isAuthenticate(username, password) {
@@ -40,7 +42,7 @@ export default class SignInCtrl {
 
     promise.then((response) => {
       if(response.isAuthenticate) {
-        this.setCredentials(formUsername.value, formPassword.value);
+        this.setCredentials(username, password);
         this.location.path('/');
       } else {
         this.scope.hasError = true;
