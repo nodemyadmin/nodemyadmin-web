@@ -7,8 +7,12 @@
 </head>
 <body>
 
-	<navbar></navbar>
-	<div class="container">		
+	<page-header ng-transclude>
+		<navbar name="nodemyadmin" version="0.0.0" link-to="#">
+		</navbar>
+	</page-header>
+
+	<div class="container">
 		<ui-view></ui-view>
 	</div>
 
