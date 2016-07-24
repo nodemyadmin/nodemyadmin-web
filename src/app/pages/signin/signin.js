@@ -12,7 +12,6 @@ import SignInService from './signin-service';
 export default angular.module('nodemyadmin.signin', [uiRouter, ngCookies, SignInService])
   .config(['$stateProvider', SignInRoute])
   .controller('SignInCtrl', [
-      '$rootScope',
       '$scope',
       '$cookies',
       '$location',

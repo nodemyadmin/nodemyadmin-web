@@ -3,28 +3,27 @@
 import angular from 'angular';
 
 export default class SignInCtrl {
-  constructor($rootScope, $scope, $cookies, $location, SignInService) {
-    this.rootScope = $rootScope;
+  constructor($scope, $cookies, $location, SignInService) {
     this.scope = $scope;
     this.cookieStore = $cookies;
     this.location = $location;
 
     this.signInService = SignInService;
-    this.unsetCredentials();
+    // this.unsetCredentials();
 
     this.hasError = false;
   }
 
-  setCredentials(username, password) {
-    this.rootScope.authenticate = {
-      username: username
+  setCredentials(username) {
+    let authenticate = {
+      username: username,
+      isAuthenticate: true
     };
 
-    this.cookieStore.put('authenticate', this.rootScope.authenticate);
+    this.cookieStore.put('authenticate', authenticate);
   }
 
   unsetCredentials() {
-    this.rootScope.authenticate = {};
     this.cookieStore.remove('authenticate');
   }
 
@@ -34,30 +33,35 @@ export default class SignInCtrl {
     }
   }
 
-  isAuthenticate(username, password) {
-    let promise = this.signInService.authenticate({
-      username: username,
-      password: password
-    });
+  isAuthenticate(isValid) {
+    if(isValid) {
+      let username = formUsername.value;
+      let password = formPassword.value;
 
-    promise.then((response) => {
-      if(response.isAuthenticate) {
-        this.setCredentials(username, password);
-        this.location.path('/');
-      } else {
+      let promise = this.signInService.authenticate({
+        username: username,
+        password: password
+      });
+
+      promise.then((response) => {
+        if(response.isAuthenticate) {
+          this.setCredentials(username);
+          this.location.path('/');
+        } else {
+          this.scope.hasError = true;
+          this.scope.alert = {
+            type: 'danger',
+            msg: 'Username or password is incorrect. Please try again.'
+          };
+        }
+      }, (response) => {
         this.scope.hasError = true;
         this.scope.alert = {
           type: 'danger',
-          msg: 'Username or password is incorrect. Please try again.'
+          msg: 'Some thing went wrong with service!'
         };
-      }
-    }, (response) => {
-      this.scope.hasError = true;
-      this.scope.alert = {
-        type: 'danger',
-        msg: 'Some thing went wrong with service!'
-      };
-    });
+      });
+    }
   }
 
   closeAlert(index) {
