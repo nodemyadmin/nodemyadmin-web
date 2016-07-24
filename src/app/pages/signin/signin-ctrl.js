@@ -9,7 +9,6 @@ export default class SignInCtrl {
     this.location = $location;
 
     this.signInService = SignInService;
-    // this.unsetCredentials();
 
     this.hasError = false;
   }
