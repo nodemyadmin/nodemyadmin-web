@@ -4,7 +4,6 @@ import angular from 'angular';
 
 class AuthService {
   constructor($cookies) {
-    console.log($cookies);
     this.cookieStore = $cookies;
   };
 
