@@ -21,7 +21,9 @@ import SettingsPage from './app/pages/settings/settings';
 import PageNotFoundPage from './app/pages/pageNotFound/pageNotFound';
 import SignInPage from './app/pages/signin/signin';
 
-angular.module('nodemyadmin', [
+import AuthService from './app/common/services/authenticate';
+
+let app = angular.module('nodemyadmin', [
     uiRouter,
     DashboardPage,
     DatabasesPage,
@@ -31,6 +33,22 @@ angular.module('nodemyadmin', [
     SettingsPage,
     PageNotFoundPage,
     SignInPage,
-    PageHeaderDirective
-  ])
-  .config(['$stateProvider', '$urlRouterProvider', Routing]);
+    PageHeaderDirective,
+    AuthService
+  ]);
+
+app.config(['$stateProvider', '$urlRouterProvider', Routing])
+
+app.run(['$rootScope', '$location', '$state', 'AuthService', ($rootScope, $location, $state, AuthService) => {
+    $rootScope.$on('$stateChangeStart', () => {
+      if(!AuthService.getCredentials()) {
+        $state.go('signin', {}, {notify: false}); //.path('/signin');
+        return;
+      } else {
+        if($location.path() === '/signin') {
+          // $location.path('/');
+          $state.go('dashboard', {}, {notify: false});
+        }
+      }
+    });
+  }]);

@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <div uib-alert close="signin.closeAlert()" ng-show="hasError" ng-class="'alert alert-' + (alert.type)">{{alert.msg}}</div>
-        <form name="authForm" novalidate ng-submit="signin.submitCredentials(authForm.$valid)">
+        <form name="authForm" novalidate ng-submit="signin.isAuthenticate(authForm.$valid)">
           <div class="form-group">
             <label for="username">Username</label>
             <input id="formUsername" ng-model="formUsername" type="text" required name="formUsername" ng-minlength="4" ng-maxlength="25" class="form-control" placeholder="E.g. ashwin"/>
