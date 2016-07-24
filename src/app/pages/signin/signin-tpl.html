@@ -5,7 +5,7 @@
         <h3 class="panel-title">Sign into your MySQL account</h3>
       </div>
       <div class="panel-body">
-        <div uib-alert close="signin.closeAlert()" ng-show="hasError" ng-class="'alert alert-' + (alert.type)">{{alert.msg}}</div>
+        <div uib-alert close="signin.closeAlert()" ng-show="hasError" type="{{alert.type}}">{{alert.msg}}</div>
         <form name="authForm" novalidate ng-submit="signin.isAuthenticate(authForm.$valid)">
           <div class="form-group">
             <label for="username">Username</label>

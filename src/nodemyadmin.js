@@ -10,6 +10,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Routing from './app/router/router-config';
 
+import uiBootstrap from 'angular-ui-bootstrap';
+
 import PageHeaderDirective from './app/components/pageHeader/pageHeader-directive';
 
 import DashboardPage from './app/pages/dashboard/dashboard';
@@ -25,6 +27,7 @@ import AuthService from './app/common/services/authenticate';
 
 let app = angular.module('nodemyadmin', [
     uiRouter,
+    uiBootstrap,
     DashboardPage,
     DatabasesPage,
     SqlPage,
