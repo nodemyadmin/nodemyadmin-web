@@ -45,11 +45,10 @@ app.config(['$stateProvider', '$urlRouterProvider', Routing])
 app.run(['$rootScope', '$location', '$state', 'AuthService', ($rootScope, $location, $state, AuthService) => {
     $rootScope.$on('$stateChangeStart', () => {
       if(!AuthService.getCredentials()) {
-        $state.go('signin', {}, {notify: false}); //.path('/signin');
+        $state.go('signin', {}, {notify: false});
         return;
       } else {
         if($location.path() === '/signin') {
-          // $location.path('/');
           $state.go('dashboard', {}, {notify: false});
         }
       }
