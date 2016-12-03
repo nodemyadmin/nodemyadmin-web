@@ -1,36 +1,32 @@
 'use strict';
 
+var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
-var config = {
-  entry: './src/nodemyadmin.js',
-
+module.exports = {
+  entry: {
+    "vendor": "./src/vendor",
+    "app": "./src/app"
+  },
   output: {
     path: './dist/',
-    filename: 'nodemyadmin.min.js'
+    filename: "[name].bundle.min.js"
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ],
-
+  resolve: {
+    extensions: ['', '.ts', '.js']
+  },
   module: {
     loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015']
-      }
+      test: /\.ts/,
+      loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+      exclude: /node_modules/
     }, {
       test: /\.(jpg|jpeg|png|gif|svg)$/i,
       loader: 'file'
     }, {
       test: /\.(html)$/i,
-      loader: 'file?name=[name].[ext]',
+      loader: 'raw?name=[name].[ext]',
       include: [
         path.resolve(__dirname, 'src', 'app')
       ]
@@ -43,11 +39,12 @@ var config = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
-    }, {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "url-loader?limit=10000&mimetype=application/font-woff"
     }]
-  }
-};
-
-module.exports = config;
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.min.js"),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
+}
