@@ -1,5 +1,3 @@
-'use strict';
-
 import PageNotFoundTpl from './pageNotFound-tpl.html';
 
 export default function routes($stateProvider) {

@@ -1,5 +1,3 @@
-'use strict';
-
 import Hapi from 'hapi';
 import mysql from 'mysql';
 import Joi from 'joi';

@@ -1,5 +1,3 @@
-'use strict';
-
 import Dashboard from './dashboard';
 
 describe('Controller: Dashboard', function () {

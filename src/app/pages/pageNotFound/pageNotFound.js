@@ -1,5 +1,3 @@
-'use strict';
-
 import './pageNotFound.less';
 
 import angular from 'angular';

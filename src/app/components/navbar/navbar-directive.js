@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 import NavbarTpl from './navbar.html';
 import NavbarService from './navbar-service';
