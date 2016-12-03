@@ -1,5 +1,3 @@
-'use strict';
-
 import SettingsTpl from './settings-tpl.html';
 
 export default function routes($stateProvider) {
