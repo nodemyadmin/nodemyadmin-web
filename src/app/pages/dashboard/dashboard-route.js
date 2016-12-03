@@ -1,5 +1,3 @@
-'use strict';
-
 import DashboardTpl from './dashboard-tpl.html';
 
 export default function routes($stateProvider) {

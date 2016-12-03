@@ -1,5 +1,3 @@
-'use strict';
-
 import DatabasesTpl from './databases-tpl.html';
 
 export default function routes($stateProvider) {
