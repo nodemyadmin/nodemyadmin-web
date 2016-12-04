@@ -10,6 +10,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { rootRouterConfig } from "./router/app.routes";
 import { LayoutComponent } from "./pages/layout/layout.component";
 import { DashboardModule } from "./pages/dashboard/dashboard.module";
+import { DatabasesModule } from "./pages/databases/databases.module";
+import { SignInModule } from "./pages/signin/signin.module";
+import { SQLModule } from "./pages/sql/sql.module";
+import { TablesModule } from "./pages/tables/tables.module";
+import { UsersModule } from "./pages/users/users.module";
 
 @NgModule({
   declarations: [ LayoutComponent ],
@@ -17,7 +22,12 @@ import { DashboardModule } from "./pages/dashboard/dashboard.module";
     BrowserModule,
     RouterModule.forRoot(rootRouterConfig),
     NgbModule.forRoot(),
-    DashboardModule
+    DashboardModule,
+    DatabasesModule,
+    SignInModule,
+    SQLModule,
+    TablesModule,
+    UsersModule
   ],
   bootstrap: [ LayoutComponent ],
   providers: [{
