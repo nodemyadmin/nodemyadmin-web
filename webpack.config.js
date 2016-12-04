@@ -3,6 +3,11 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var product = require('./package.json');
+
+var banner = product.name + " v" + product.version;
+banner += "\nDeveloped & maintained by " + product.author + " and contributors.";
+banner += "\nMIT Licensed";
 
 module.exports = {
   entry: {
@@ -39,12 +44,26 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
     }]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.min.js"),
+
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+
+		new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+
+    new webpack.optimize.UglifyJsPlugin(),
+
+    new webpack.BannerPlugin(banner)
   ]
 }
