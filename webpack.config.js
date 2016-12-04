@@ -31,7 +31,7 @@ module.exports = {
         path.resolve(__dirname, 'src', 'app')
       ]
     }, {
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      test: /\.(ttf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file"
     }, {
       test: /\.less$/,
