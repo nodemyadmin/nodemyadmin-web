@@ -10,12 +10,16 @@
     }
   ],
   "scripts": {
-    "start": "babel-node ./server/server.js",
-    "dev": "webpack -d --watch",
-    "build": "webpack -p -d",
-    "eslint": "./node_modules/.bin/eslint 'src/app/**/*.js'",
-    "test": "karma start karma.conf.js",
-    "lesslint": "./node_modules/.bin/lesshint src/app/"
+    "start:server": "NODE_ENV=production babel-node ./server/server.js",
+    "start:dev": "lite-server -c bs-config.json",
+    "dist:clean": "rimraf dist",
+    "coverage:clean": "rimrag coverage",
+    "bundle": "npm run dist:clean && webpack -d --watch",
+    "build": "npm run dist:clean && webpack -p -d",
+    "test:all": "karma start karma.conf.js",
+    "postinstall": "typings install",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts'",
+		"lesslint": "./node_modules/.bin/lesshint src/app/"
   },
   "repository": {
     "type": "git",
