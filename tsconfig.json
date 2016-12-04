@@ -8,6 +8,9 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "types": [
+    "node"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",
