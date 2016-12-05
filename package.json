@@ -14,10 +14,10 @@
     "start:dev": "lite-server -c bs-config.json",
     "dist:clean": "rimraf dist",
     "coverage:clean": "rimrag coverage",
-    "bundle": "npm run dist:clean && webpack -d --watch",
-    "build": "npm run dist:clean && webpack -p -d",
+    "bundle": "npm run dist:clean && webpack --config ./configs/build/webpack.config.js -d --watch",
+    "build": "npm run dist:clean && webpack --config ./configs/build/webpack.config.js -p -d",
     "test:all": "karma start karma.conf.js",
-    "postinstall": "typings install",
+    "postinstall": "typings install && npm run build",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts'",
     "lesslint": "./node_modules/.bin/lesshint src/app/"
   },

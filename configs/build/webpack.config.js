@@ -1,9 +1,11 @@
 'use strict';
 
+var BUILD_CONFIG = require('./build.config');
+
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
-var product = require('./package.json');
+var product = require(BUILD_CONFIG.product);
 
 var banner = product.name + " v" + product.version;
 banner += "\nDeveloped & maintained by " + product.author + " and contributors.";
@@ -11,11 +13,11 @@ banner += "\nMIT Licensed";
 
 module.exports = {
   entry: {
-    "vendor": "./src/vendor",
-    "app": "./src/app"
+    "vendor": BUILD_CONFIG.vendor,
+    "app": BUILD_CONFIG.app
   },
   output: {
-    path: './dist/',
+    path: BUILD_CONFIG.dist,
     filename: "[name].bundle.min.js"
   },
   resolve: {
@@ -33,7 +35,7 @@ module.exports = {
       test: /\.(html)$/i,
       loader: 'raw?name=[name].[ext]',
       include: [
-        path.resolve(__dirname, 'src', 'app')
+        path.resolve(BUILD_CONFIG.app)
       ]
     }, {
       test: /\.(ttf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -53,7 +55,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.min.js"),
 
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: path.join(BUILD_CONFIG.index)
     }),
 
 		new webpack.DefinePlugin({
