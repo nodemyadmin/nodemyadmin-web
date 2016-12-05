@@ -20,7 +20,7 @@
     "test:all": "karma start ./configs/test/karma.conf.js",
     "test:e2e": "protractor ./configs/test/protractor.conf.js",
     "postinstall": "typings install && npm run build",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint:ts": "tslint --config ./tslint.json \"src/**/*.ts\"",
     "lesslint": "./node_modules/.bin/lesshint src/app/",
     "webdriver:manager": "webdriver-manager",
     "webdriver:start": "npm run webdriver:manager start",
