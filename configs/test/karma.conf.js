@@ -1,6 +1,6 @@
 'use strict';
 
-var webpackConfig = require('./webpack.config');
+var webpackConfig = require('../build/webpack.config');
 
 module.exports = function(config) {
   config.set({
@@ -11,7 +11,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './test.webpack.config.js'
+      '../build/webpack.config.test.js'
     ],
 
     // list of files to exclude
@@ -21,7 +21,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './test.webpack.config.js': ['webpack', 'babel']
+      '../build/webpack.config.test.js': ['webpack', 'babel']
     },
 
     // test results reporter to use
