@@ -23,11 +23,10 @@
     "lint:client": "tslint --config ./tslint.json \"src/**/*.ts\"",
     "lint:client:fix": "tslint --config ./tslint.json --fix \"src/**/*.ts\"",
     "lint:less": "lesshint src/app/",
-    "webdriver:manager": "webdriver-manager",
-    "webdriver:start": "npm run webdriver:manager start",
-    "webdriver:update": "npm run webdriver:manager update",
-    "webdriver:status": "npm run webdriver:manager status",
-    "webdriver:clean": "npm run webdriver:manager clean"
+    "webdriver:start": "webdriver-manager start",
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:status": "webdriver-manager status",
+    "webdriver:clean": "webdriver-manager clean"
   },
   "pre-commit": {
     "run": [
@@ -77,6 +76,7 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.38",
     "angular-mock": "^1.0.0",
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
@@ -113,6 +113,7 @@
     "typescript": "^2.0.3",
     "typings": "^1.3.2",
     "url-loader": "^0.5.7",
+    "webdriver-manager": "^10.2.10",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
