@@ -17,7 +17,7 @@
     "coverage:clean": "rimrag coverage",
     "bundle": "npm run dist:clean && webpack --config ./configs/build/webpack.config.dev.js -d --watch",
     "build": "npm run dist:clean && webpack --config ./configs/build/webpack.config.prod.js -p -d",
-    "test:all": "karma start ./configs/test/karma.conf.js",
+    "test": "karma start ./configs/test/karma.conf.js",
     "test:e2e": "protractor ./configs/test/protractor.conf.js",
     "postinstall": "typings install && npm run build",
     "lint:client": "tslint --config ./tslint.json \"src/**/*.ts\"",
