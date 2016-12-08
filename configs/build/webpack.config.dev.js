@@ -48,7 +48,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.min.js"),
+    // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.min.js"),
 
     new HtmlWebpackPlugin({
       template: path.join(BUILD_CONFIG.index)
